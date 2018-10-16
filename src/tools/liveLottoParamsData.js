@@ -118,7 +118,29 @@ const lottoData = {
         "4for2_incentiveCode": "4f2_irish_reg",
         "5for2_packageId": 461,
         "5for2_incentiveCode": "5f2_irish_reg"
-    }
-}
+    },
+
+      "scratchcards": {
+        freeticket_packageId: 457,
+        freeticket_incentiveCode: "free_ticket_irish_reg",
+        freeticketv2_packageId: 457,
+        freeticketv2_incentiveCode: "free_ticket_irish_reg",
+        "4for1_packageId": 460,
+        "4for1_incentiveCode": "4f1_irish_reg",
+        "3for1_packageId": 459,
+        "3for1_incentiveCode": "3f1_irish_reg",
+        "2for1_packageId": 458,
+        "2for1_incentiveCode": "2f1_irish_reg",
+        "6for3_packageId": 462,
+        "6for3_incentiveCode": "6f3_irish_reg",
+        "10for5_packageId": 463,
+        "10for5_incentiveCode": "10f5_irish_reg",
+        "4for2_packageId": 460,
+        "4for2_incentiveCode": "4f2_irish_reg",
+        "5for2_packageId": 461,
+        "5for2_incentiveCode": "5f2_irish_reg"
+      }
+
+};
 
 export default lottoData;

@@ -28,6 +28,10 @@ import irishlottoBGMob from "../../assets/Header/mob-bg/irishlotto.jpg";
 import irishlottoPeople from "../../assets/Header/people/irishlotto.png";
 import irishlottoLogo from "../../assets/Header/logo/irishlotto.png";
 
+
+import scratchcardsBG from "../../assets/Header/bg/scratch.png";
+import scratchcardsBGMob from "../../assets/Header/mob-bg/scratch.png"
+
 const allLottoData = {
     ["megamillions"]: {
         bg: megaBG,
@@ -71,6 +75,14 @@ const allLottoData = {
         bgMob: irishlottoBGMob,
         people: irishlottoPeople
     },
-}
+    ["scratchcards"]: {
+      bg: scratchcardsBG,
+      // logo: irishlottoLogo,
+      currency: "€",
+      bgMob: scratchcardsBGMob
+      // people: irishlottoPeople
+    }
+};
+
 
 export default allLottoData;

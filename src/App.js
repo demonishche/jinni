@@ -30,12 +30,36 @@ class App extends Component {
       documentReady: false
   };
 
+  stratchcards = {
+    DrawDate: "2018-10-18 18:55:00",
+    DrawID: 520,
+    Jackpot: 70000,
+    LotteryCurrency: "Euro",
+    LotteryID: 35,
+    LotteryName: "Scratchcards",
+    RoundedJackpot: 12320000,
+    TimeToResolve: 170399,
+    TimeZone: "+11:0",
+    WinningResult: "",
+}
+
   formRef = React.createRef();
 
   async componentDidMount() {
       await this.setUrlData();
 
       let feedObject = {};
+      
+    console.log(this.state.urlData.lotteryOrientation);
+    if (this.state.urlData.lotteryOrientation === 'scratchcards') {
+        let lottoData = this.stratchcards;
+        let pickerLottoData = allPickerLottoData[this.state.urlData.lotteryOrientation];
+        console.log(pickerLottoData)
+        this.setState({
+            lottoData,
+            pickerLottoData
+        });
+    } else {
       axios
           .get("https://feed.jinnilotto.com/feed.json")
           .then(response => {
@@ -46,6 +70,7 @@ class App extends Component {
               console.log("feed.json retrieving error");
               console.log(error);
           });
+        }
   }
 
   selectLottoData = data => {

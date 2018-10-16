@@ -26,7 +26,8 @@
       "eurojackpot": "Wähle {{numbersAmount}} Zahlen zwischen 1 und {{maxNumber}} und {{bonusAmount}} {{bonusName}} zwischen {{minBonus}} und {{maxBonus}} oder klicke einfach auf 'Quicktipp' für eine zufällige Auswahl.",
       "powerball": "Wähle {{numbersAmount}} Zahlen zwischen 1 und {{maxNumber}} sowie einen Bonus oder klicke 'Quicktipp' für eine zufällige Auswahl",
       "6aus49": "Wähle {{numbersAmount}} Glückszahlen + eine {{bonusName}} oder klicke 'Quicktipp' für eine zufällige Auswahl",
-      "irishlottery": "Select {{numbersAmount}} numbers or simply click “Quick Pick” for a random selection."
+      "irishlottery": "Select {{numbersAmount}} numbers or simply click “Quick Pick” for a random selection.",
+      "scratchcards": "Select {{numbersAmount}} numbers or simply click “Quick Pick” for a random selection."
     },
     "secondStep": {
       "freeticket": {
@@ -69,6 +70,11 @@
           "desktop": "There are two Irish Lotto draws every week. Be sure to check the results Follow the results of the next Irish Lotto draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner.",
           "mobile":
             "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
+        },
+        "scratchcards": {
+          "desktop": "There are two Irish Lotto draws every week. Be sure to check the results Follow the results of the next Irish Lotto draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner.",
+          "mobile":
+            "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
         }
       }
     }
@@ -91,6 +97,10 @@
       "pluralBonusName": "Powerball"
     },
     "6aus49": {
+      "bonusName": "Superzahl",
+      "pluralBonusName": "Superzahlen"
+    },
+    "irishlottery": {
       "bonusName": "Superzahl",
       "pluralBonusName": "Superzahlen"
     },
@@ -216,7 +226,8 @@
         "Über die Hälfte aller Powerball Jackpots seit 2012 haben die € 100 Millionen-Grenze überschritten. Der Powerball macht keine halben Sachen."
       ],
       "6aus49": ["6aus49 schüttet jedes Jahr 5 Milliarden Euro an Preisgeldern aus."],
-      "irishlottery": ["The Irish Lotto has one of the highest chances of winning (1 in 10,737,573) and has very few roll overs with an averaging Jackpot of 4 Million euros in 2018"]
+      "irishlottery": ["The Irish Lotto has one of the highest chances of winning (1 in 10,737,573) and has very few roll overs with an averaging Jackpot of 4 Million euros in 2018"],
+      "scratchcards": ["The Irish Lotto has one of the highest chances of winning (1 in 10,737,573) and has very few roll overs with an averaging Jackpot of 4 Million euros in 2018"]
     }
   },
   "footerText": {

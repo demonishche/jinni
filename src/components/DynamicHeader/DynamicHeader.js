@@ -37,6 +37,7 @@ class DynamicHeader extends Component {
 
 
   render() {
+
 	  const { lotto, jackpot, numberOfNotFree, t } = this.props;
 	  const {ticketsData} = this.props.pickerStore;
       const lottoData = this.state.lottoData;
@@ -44,11 +45,12 @@ class DynamicHeader extends Component {
       const jackpotDisplay = jackpot ? this.constructJackpot(jackpot) : undefined;
 
       return (
+
           <header className="header" style={{ backgroundImage: `url(${lottoData.bg})` }}>
               <img src={lottoData.people} alt="" className="header_people" />
               <div className="cont-zone">
 			  {numberOfNotFree === 0 ? (
-				  <h2 className="header_title -with-logo" dangerouslySetInnerHTML={{__html:t("freeticketTitle", 
+				  <h2 className="header_title -with-logo" dangerouslySetInnerHTML={{__html:t("freeticketTitle",
 				  {lotteryLogo: lottoData.logo, lotteryName: lotto})}}>
                       </h2>
 			  )  : (

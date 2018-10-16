@@ -13,6 +13,7 @@ import iconArrow from "../../assets/Help/icons/ic_arrow.svg";
 import iconPick from "../../assets/Help/icons/ic_pick.svg";
 import iconGet from "../../assets/Help/icons/ic_get.svg";
 import iconCollect from "../../assets/Help/icons/ic_collect.svg";
+import iconScratch from "../../assets/Help/icons/ic_lotto.svg";
 
 const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotFree, t }) => {
 
@@ -20,7 +21,7 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
 
     const currHelpLottoData = helpLottoData[lottoSelector];
     const currPickerLottoData = pickerLottoData[lottoSelector];
-
+    console.log(lottoSelector)
     return (
         <section className="help">
             <div className="cont-zone">

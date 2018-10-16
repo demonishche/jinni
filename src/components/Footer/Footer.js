@@ -40,6 +40,9 @@ const Footer = ({offer, t, i18n}) => {
                         <div className="hide-sm">
                             <img src="./assets/logo/logo_secure.png" alt="Secure SSL encryption" />
                         </div>
+                        {/*<div className="footer-logo">*/}
+                          {/*<img src="./assets/logo/logo_jinni-loto.svg" alt="Logo"/>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </section>
@@ -51,11 +54,11 @@ const Footer = ({offer, t, i18n}) => {
             </section>
         </footer>
     )
-}
+};
 
 Footer.propTypes = {
     offer: string,
     t: func.isRequired
-}
+};
 
 export default translate("footerText")(Footer);

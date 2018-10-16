@@ -91,21 +91,41 @@ const lottoData = {
     },
     "irishlottery": {
         firstStep: pickerData => (
-            <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:firstStepText.irishlottery", 
+            <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:firstStepText.irishlottery",
                 {numbersAmount: pickerData.numbersAmount, maxNumber: pickerData.maxNumber})}}>
             </p>
         ),
         desktop: timeRemains => (
-            <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:thirdStep.text.irishlottery.desktop", 
+            <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:thirdStep.text.irishlottery.desktop",
                 {timeRemains})}}>
             </p>
         ),
         mobile: timeRemains => (
-            <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:thirdStep.text.irishlottery.mobile", 
+            <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:thirdStep.text.irishlottery.mobile",
                 {timeRemains})}}>
             </p>
         )
     },
+
+  "scratchcards": {
+    firstStep: pickerData => (
+     <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:firstStepText.irishlottery",
+        {numbersAmount: pickerData.numbersAmount, maxNumber: pickerData.maxNumber})}}>
+     </p>
+    ),
+    desktop: timeRemains => (
+     <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:thirdStep.text.scratchcards.desktop",
+        {timeRemains})}}>
+     </p>
+    ),
+    mobile: timeRemains => (
+     <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:thirdStep.text.scratchcards.mobile",
+        {timeRemains})}}>
+     </p>
+    )
+  },
+
+
 };
 
 export default lottoData;

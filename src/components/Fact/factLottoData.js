@@ -7,8 +7,9 @@ const lottoData = {
     "eurojackpot": factsData.eurojackpot,
     "powerball": factsData.powerball,
     "6aus49": factsData["6aus49"],
-    "irishlottery": factsData.irishlottery
-}
+    "irishlottery": factsData.irishlottery,
+    "scratchcards": factsData.scratchcards
+};
 
 
 export default lottoData
