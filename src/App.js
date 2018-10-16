@@ -267,7 +267,7 @@ class App extends Component {
                       )
                   }
               </Media>
-              <div className="main">
+              <div className={`main ${lottoName.toLowerCase() === "scratchcards" ? "main--hidden" : ""}`}>
                   <div className="cont-zone">
                       {offer === "freeticket" && (
                           <h1
