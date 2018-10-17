@@ -254,6 +254,7 @@
   height: 900px;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 .logo-scratch {
 width: 106px;
@@ -359,7 +360,7 @@ text-transform: uppercase;
 
 .scratch-button a {
 color: #ffffff;
-font-family: "Poppins Semi Bold";
+font-family: "Poppins";
 font-size: 22px;
 font-weight: 600;
 text-transform: uppercase;
@@ -374,38 +375,48 @@ padding:13px 0 13px 0;
 }
 
 .scratch-tickets {
-width: 720px;
+width: 750px;
 display: block;
 margin: 0 auto;
 }
 
+.ticket:nth-child(1) {
+  transform: rotate(340deg);
+  top: 350px;
+  position: relative;
+  left: 20px;
+}
+
+
 .ticket:nth-child(2) {
-position: relative;
-left: 200px;
-top: 400px	
+  transform: rotate(357deg);
+  top: 378px;
+  left: 180px;
+  position: relative;
 }
 
 .ticket:nth-child(3)  {
-position: relative;
-left: 400px;
-top: 400px	
+  transform: rotate(375deg);
+  top: 450px;
+  left: 320px;
+  position: relative;
 }
 
 .ticket-1 img{
  position: absolute;
  bottom: 30px;
- transform: rotate(80deg);
+ transform: rotate(270deg);
 
 }
 .ticket-2 img{
  position: absolute;
  bottom: 30px;
- transform: rotate(84deg);
+ transform: rotate(272deg);
 
 }
 .ticket-3 img{
  position: absolute;
  bottom: 30px;
- transform: rotate(88deg);
+ transform: rotate(274deg);
 
 }

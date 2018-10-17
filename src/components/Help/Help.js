@@ -13,7 +13,7 @@ import iconArrow from "../../assets/Help/icons/ic_arrow.svg";
 import iconPick from "../../assets/Help/icons/ic_pick.svg";
 import iconGet from "../../assets/Help/icons/ic_get.svg";
 import iconCollect from "../../assets/Help/icons/ic_collect.svg";
-import iconScratch from "../../assets/Help/icons/ic_lotto.svg";
+import iconScratch from "../../assets/Help/icons/ic_lotto.png";
 
 const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotFree, t }) => {
 
