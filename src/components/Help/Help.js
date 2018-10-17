@@ -36,14 +36,14 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                     {offer.indexOf("freeticket") !== -1 ? (
                         <div className="help_step">
                             <img src={lotto !== 'scratchcards' ? iconGet : iconScratch} alt="" className="help_step_icon" />
-                            <h4 className="help_step_title">{t("secondStep.freeticket.title")}</h4>
+                            <h4 className="help_step_title">{lotto !== 'scratchcards' ? t("secondStep.freeticket.title") : t("secondStep.ScratchSecondStep.title")}</h4>
                             <Media query="(min-width: 768px)">
                                 {matches =>
                                     matches ? (
-                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: t("secondStep.freeticket.text.desktop")}}>
+                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? t("secondStep.freeticket.text.desktop") : t("secondStep.ScratchSecondStep.title")}}>
                                         </p>
                                     ) : (
-                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: t("secondStep.freeticket.text.mobile")}}>
+                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? t("secondStep.freeticket.text.mobile") : t("secondStep.ScratchSecondStep.title")}}>
                                         </p>
                                     )
                                 }
@@ -53,9 +53,11 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                         <div className="help_step">
                             <img src={lotto !== 'scratchcards' ? iconGet : iconScratch} alt="" className="help_step_icon" />
                             <h4 className="help_step_title">
-                                {t("secondStep.notfree.title", {numberOfFreeLines: pickerStore.ticketsData.length - numberOfNotFree})}
+                                {lotto !== 'scratchcards' ? t("secondStep.notfree.title", {numberOfFreeLines: pickerStore.ticketsData.length - numberOfNotFree}) : t("secondStep.ScratchSecondStep.title")}
                             </h4>
-                            <p className="help_step_text" dangerouslySetInnerHTML={{__html: t("secondStep.notfree.text", {numberOfTickets: pickerStore.ticketsData.length, numberOfNotFree:numberOfNotFree})}}>
+                            <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? (
+                                t("secondStep.notfree.text", {numberOfTickets: pickerStore.ticketsData.length, numberOfNotFree:numberOfNotFree})
+                                ) : t("secondStep.ScratchSecondStep.text")}}>
                             </p>
                         </div>
                     )}

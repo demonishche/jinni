@@ -109,7 +109,7 @@ const lottoData = {
 
   "scratchcards": {
     firstStep: pickerData => (
-     <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:firstStepText.irishlottery",
+     <p className="help_step_text" dangerouslySetInnerHTML={{__html: i18n.t("helpSectionText:firstStepText.scratchcards",
         {numbersAmount: pickerData.numbersAmount, maxNumber: pickerData.maxNumber})}}>
      </p>
     ),

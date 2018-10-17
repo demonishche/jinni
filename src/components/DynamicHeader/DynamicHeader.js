@@ -56,7 +56,7 @@ class DynamicHeader extends Component {
       for (let i = 0; i < count; i++) {
         result.push(
             <div className="ticket-item">
-                <img style={{transform: `rotate(${70 + 15*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                <img style={{transform: `rotate(${270 + 5*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
             </div>
         )
       }
