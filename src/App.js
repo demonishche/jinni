@@ -78,14 +78,21 @@ class App extends Component {
   }
 
   getScratchcardsInfo() {
+        const liveHost = "lp.jinnilotto.com";
       let fetchData = {};
       const incentiveID = getParamFromURL("incentiveId");
       console.log(incentiveID);
       if (!incentiveID)
         location.href = location.origin;
 
+        let link = '';
+        
+        if (window.location.hostname.includes(liveHost))
+            link = 'https://api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
+        else 
+            link = 'https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
       axios
-        .get("https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=" + incentiveID)
+        .get(link + incentiveID)
         .then(response => {
             fetchData = response.data;
             console.log(fetchData)
