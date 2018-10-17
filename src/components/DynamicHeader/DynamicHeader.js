@@ -3,9 +3,12 @@ import PropTypes from "prop-types";
 import { mobXConnect } from "../../tools/toolFunctions";
 import {translate} from "react-i18next";
 
+
+
 import allLottoData from "./headerLottoData";
 
 import {roundDecimal, roundMillions, reverseString, mapStringToImages} from "./jackpotTools";
+const liveHost = "lp.jinnilotto.com";
 
 class DynamicHeader extends Component {
   state = {
@@ -35,9 +38,32 @@ class DynamicHeader extends Component {
       }
   };
 
+  generateLink = () => {
+    const { data, urlData } = this.props;
+    if (!data.Discount)
+        return '';
+
+      const link = `?incentiveId=${data.IncentiveID}&incentiveCode=${urlData.packageId}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`
+
+      if (window.location.hostname.includes(liveHost))
+        return `https://jinnilotto.com${link}`;
+      else
+        return `https://stage.jinnilotto.com${link}`;
+  }
+
+  generateImegas = (count, item, itemIndex) => {
+      let result = [];
+      for (let i = 0; i < count; i++) {
+        result.push(
+            <div className="ticket-item">
+                <img style={{transform: `rotate(${70 + 15*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+            </div>
+        )
+      }
+      return result;
+  }
 
   render() {
-
 	  const { lotto, jackpot, numberOfNotFree, t, data } = this.props;
 	  const {ticketsData} = this.props.pickerStore;
       const lottoData = this.state.lottoData;
@@ -81,7 +107,7 @@ class DynamicHeader extends Component {
                             <p>{t("jinnisScratchcards")}</p>
                         </div>
                         <div className="title-scratch">
-                            <p>{t("scratchcardsGamesCount")} €{data.PackagePrice}</p>
+                            <p>{data.gamesCount} {t("scratchcardsGamesCount")} €{data.PackagePrice}</p>
                         </div>
                         <div className="under-title-text">
                             <p dangerouslySetInnerHTML={{__html:t("scratchcardsTitle", {data: data})}}></p>
@@ -98,22 +124,16 @@ class DynamicHeader extends Component {
                             </span>
                         </div>
                         <div className="scratch-button">
-                            <a href='#'>{t("scratchcardsPlayNow")}</a>
+                            <a href={this.generateLink()}>{t("scratchcardsPlayNow")}</a>
                         </div>
                     </div>
                     {!!data.games ? (<div className="scratch-tickets">
-                        {data.games.map(item => {
+                        {data.games.map((item, itemIndex) => {
                              return (
                                 <div className="ticket">
-                                    <div className="ticket-1">
-                                        <img src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
-                                    </div>
-                                    <div className="ticket-2">
-                                        <img src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
-                                    </div>
-                                    <div className="ticket-3">
-                                        <img src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
-                                    </div>
+                                    {
+                                        this.generateImegas(item.entries, item, itemIndex)
+                                    }
                                 </div>
                              )
                         })}

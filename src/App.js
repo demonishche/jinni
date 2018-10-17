@@ -79,8 +79,13 @@ class App extends Component {
 
   getScratchcardsInfo() {
       let fetchData = {};
+      const incentiveID = getParamFromURL("incentiveId");
+      console.log(incentiveID);
+      if (!incentiveID)
+        location.href = location.origin;
+
       axios
-        .get("https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=246")
+        .get("https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=" + incentiveID)
         .then(response => {
             fetchData = response.data;
             console.log(fetchData)
@@ -93,19 +98,25 @@ class App extends Component {
                 PackagePrice: fetchData.PackagePrice,
                 OriginPrice: fetchData.OriginPrice,
                 Jackpot: fetchData.TotalJackpotAmount,
-                LotteryCurrency: "Euro",
-                LotteryID: 35,
+                LotteryCurrency: fetchData.currency,
+                incentiveID: incentiveID,
+                // LotteryID: 35,
                 LotteryName: 'scratchcards',
-                RoundedJackpot: 12320000,
-                TimeToResolve: 170399,
-                TimeZone: "+11:0",
+                // RoundedJackpot: 12320000,
+                // TimeToResolve: 170399,
+                // TimeZone: "+11:0",
                 WinningResult: "",
+                Discount: fetchData.Discount,
+                gamesCount: 0
               }
 
             lottoData['games'] = fetchData.Items.map(item => {
+                console.log(item.NumberOfEntries)
+                lottoData.gamesCount += parseInt(item.NumberOfEntries);
                 return {
                     id: item.ItemID,
-                    name: item.Game.GameID
+                    name: item.Game.GameID,
+                    entries: item.NumberOfEntries
                 }
             })
 
@@ -173,6 +184,7 @@ class App extends Component {
           referral: referral.length > 0 ? referral : window.location.href
       };
 
+      console.log(urlData);
       const newUrlData = Object.assign({}, this.state.urlData, urlData);
 
       this.setState({
@@ -306,6 +318,7 @@ class App extends Component {
                               offer={offer}
                               numberOfNotFree={this.state.numberOfNotFree}
                               data={this.state.lottoData}
+                              urlData={this.state.urlData}
                           />
                       ) : (
                           <DynamicMobileHeader
@@ -315,6 +328,7 @@ class App extends Component {
                               numberOfNotFree={this.state.numberOfNotFree}
                               price={this.state.price}
                               data={this.state.lottoData}
+                              urlData={this.state.urlData}
                           />
                       )
                   }

@@ -254,6 +254,7 @@
   height: 900px;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 .logo-scratch {
 width: 106px;
@@ -391,21 +392,9 @@ left: 400px;
 top: 400px	
 }
 
-.ticket-1 img{
+.ticket-item img{
  position: absolute;
  bottom: 30px;
- transform: rotate(80deg);
-
-}
-.ticket-2 img{
- position: absolute;
- bottom: 30px;
- transform: rotate(84deg);
-
-}
-.ticket-3 img{
- position: absolute;
- bottom: 30px;
- transform: rotate(88deg);
-
+ transform: rotate(70deg);
+ transform-origin: center center;
 }

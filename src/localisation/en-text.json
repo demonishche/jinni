@@ -11,7 +11,7 @@
     "million": "million",
     "notfreeTitle": "Get {{numberOfTickets}} <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> lines for the price of {{numberOfNotFree}}",
     "jinnisScratchcards": "JINNI’S SCRATCHCARDS",
-    "scratchcardsGamesCount": "9 GAMES AT",
+    "scratchcardsGamesCount": "GAMES AT",
     "scratchcardsTitle": "You could win <span className='win'>€{{data.Jackpot}}</span> in the next 10 seconds.",
     "scratchcardsSubtitle": "Ready. Steady. Scratch!",
     "scratchcardsOldPrice": "was",
@@ -21,7 +21,7 @@
   "headerMobileText": {
     "freeticketTitle": "Play the next draw for <span>FREE</span>",
     "jinnisScratchcards": "JINNI’S SCRATCHCARDS",
-    "scratchcardsGamesCount": "9 GAMES AT",
+    "scratchcardsGamesCount": "GAMES AT",
     "scratchcardsTitle": "You could win <span className='win'>€{{data.Jackpot}}</span> in the next 10 seconds.",
     "scratchcardsSubtitle": "Ready. Steady. Scratch!",
     "scratchcardsOldPrice": "was",
