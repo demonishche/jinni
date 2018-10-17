@@ -314,6 +314,7 @@ class App extends Component {
                               modalOpenHandler={this.openModal}
                               numberOfNotFree={this.state.numberOfNotFree}
                               price={this.state.price}
+                              data={this.state.lottoData}
                           />
                       )
                   }
