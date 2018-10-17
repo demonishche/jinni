@@ -29,7 +29,7 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                 <div className="help_subwrap">
                     <div className="help_step">
                         <img src={iconPick} alt="" className="help_step_icon" />
-                        <h4 className="help_step_title">{t("firstStepTitle")}</h4>
+                        <h4 className="help_step_title">{lotto !== 'scratchcards' ? t("firstStepTitle") : t("firstStepScratchTitle")}</h4>
                         {currHelpLottoData.firstStep(currPickerLottoData)}
                     </div>
                     <img src={iconArrow} alt="next" className="help_arrow" />
@@ -40,10 +40,10 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                             <Media query="(min-width: 768px)">
                                 {matches =>
                                     matches ? (
-                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? t("secondStep.freeticket.text.desktop") : t("secondStep.ScratchSecondStep.title")}}>
+                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? t("secondStep.freeticket.text.desktop") : t("secondStep.ScratchSecondStep.text")}}>
                                         </p>
                                     ) : (
-                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? t("secondStep.freeticket.text.mobile") : t("secondStep.ScratchSecondStep.title")}}>
+                                        <p className="help_step_text" dangerouslySetInnerHTML={{__html: lotto !== 'scratchcards' ? t("secondStep.freeticket.text.mobile") : t("secondStep.ScratchSecondStep.text")}}>
                                         </p>
                                     )
                                 }
@@ -64,7 +64,7 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                     <img src={iconArrow} alt="next" className="help_arrow" />
                     <div className="help_step">
                         <img src={iconCollect} alt="" className="help_step_icon" />
-                        <h4 className="help_step_title">{t("thirdStep.title")}</h4>
+                        <h4 className="help_step_title">{lotto !== 'scratchcards' ? t("thirdStep.title") : t("thirdStep.thirdScratchTitle")}</h4>
                         <Timer lotto={lottoSelector} drawDate={drawDate} />
                     </div>
                 </div>

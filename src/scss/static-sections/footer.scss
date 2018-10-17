@@ -1,6 +1,6 @@
 .footer_affiliates {
     margin-top: 100px;
-	height: 252px;
+	// height: 252px;
 	background-color: white;	
     .cont-zone {
 				display: flex;
@@ -12,7 +12,7 @@
 	}
 	@media(max-width:768px) {
 		margin-top: 0;
-		height: 92px;
+		// height: 92px;
 		.cont-zone {
 			margin: 0 15px;
 			border-color: rgba(215, 231, 255, 0.5);
@@ -21,9 +21,9 @@
 }
 
 .helpLogo__container {
-	//width: 100%;
-	//display: flex;
-	//justify-content: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 
 }
 
