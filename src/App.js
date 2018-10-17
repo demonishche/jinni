@@ -337,176 +337,97 @@ class App extends Component {
     };
 
     render() {
-        const {
-            lottoData,
-            urlData
-        } = this.state;
-        const {
-            t
-        } = this.props;
+        const {lottoData, urlData} = this.state;
+        const {t} = this.props;
         if (!urlData) {
-            return <div className = "loader" / > ;
+            return <div className="loader" />;
         }
-
-        const {
-            offer
-        } = urlData;
+  
+        const {offer} = urlData;
         const lottoName = lottoData.LotteryName ? lottoData.LotteryName.toLowerCase().replace(/\s/g, "") : urlData.lotteryOrientation;
         const lottoNameOrginal = lottoData.LotteryName ? lottoData.LotteryName : "";
         // const lottoName = urlData.lotteryOrientation;
-
-        const drawDateString = lottoData.DrawDate ?
-            `${lottoData.DrawDate} ${lottoData.TimeZone}` :
-            undefined;
+  
+        const drawDateString = lottoData.DrawDate
+            ? `${lottoData.DrawDate} ${lottoData.TimeZone}`
+            : undefined;
         const jackpotString = lottoData.Jackpot ? lottoData.Jackpot.toString() : undefined;
-
-        return ( <
-            Fragment >
-            <
-            Media query = "(min-width: 768px)" > {
-                matches =>
-                matches ? ( <
-                    DynamicHeader lotto = {
-                        lottoName
+  
+        return (
+            <Fragment>
+                <Media query="(min-width: 768px)">
+                    {matches =>
+                        matches ? (
+                            <DynamicHeader
+                                lotto={lottoName}
+                                jackpot={jackpotString}
+                                offer={offer}
+                                numberOfNotFree={this.state.numberOfNotFree}
+                                data={this.state.lottoData}
+                                urlData={this.state.urlData}
+                            />
+                        ) : (
+                            <DynamicMobileHeader
+                                lotto={lottoName}
+                                jackpot={jackpotString}
+                                modalOpenHandler={this.openModal}
+                                numberOfNotFree={this.state.numberOfNotFree}
+                                price={this.state.price}
+                                data={this.state.lottoData}
+                                urlData={this.state.urlData}
+                            />
+                        )
                     }
-                    jackpot = {
-                        jackpotString
-                    }
-                    offer = {
-                        offer
-                    }
-                    numberOfNotFree = {
-                        this.state.numberOfNotFree
-                    }
-                    data = {
-                        this.state.lottoData
-                    }
-                    urlData = {
-                        this.state.urlData
-                    }
-                    />
-                ) : ( <
-                    DynamicMobileHeader lotto = {
-                        lottoName
-                    }
-                    jackpot = {
-                        jackpotString
-                    }
-                    modalOpenHandler = {
-                        this.openModal
-                    }
-                    numberOfNotFree = {
-                        this.state.numberOfNotFree
-                    }
-                    price = {
-                        this.state.price
-                    }
-                    data = {
-                        this.state.lottoData
-                    }
-                    urlData = {
-                        this.state.urlData
-                    }
-                    />
-                )
-            } <
-            /Media> <
-            div className = {
-                `main ${lottoName.toLowerCase() === this.stratchcardsName ? "main--hidden" : ""}`
-            } >
-            <
-            div className = "cont-zone" > {
-                offer === "freeticket" && ( <
-                    h1 className = "main_title"
-                    dangerouslySetInnerHTML = {
-                        {
-                            __html: t("freeticketMainTitle")
-                        }
-                    }
-                    />
-                )
-            } <
-            div className = {
-                `main_subwrap ${offer !== "freeticket" ? "-vertical" : ""}`
-            } > {
-                offer !== "freeticket" ? ( <
-                    MultipleTicketsPicker scrollAppToForm = {
-                        this.scrollToForm
-                    }
-                    lotto = {
-                        lottoName
-                    }
-                    numberOfNotFree = {
-                        this.state.numberOfNotFree
-                    }
-                    ref = {
-                        picker => (this.numberPicker = picker)
-                    }
-                    price = {
-                        this.state.price
-                    }
-                    />
-                ) : ( <
-                    NumberPicker scrollAppToForm = {
-                        this.scrollToForm
-                    }
-                    lotto = {
-                        lottoName
-                    }
-                    ref = {
-                        picker => (this.numberPicker = picker)
-                    }
-                    />
-                )
-            } <
-            RegisterForm ref = {
-                this.formRef
-            }
-            offer = {
-                offer
-            }
-            submitHandler = {
-                this.passDataToSendingModule
-            }
-            /> < /
-            div > <
-            /div> < /
-            div > <
-            Help offer = {
-                offer
-            }
-            numberOfNotFree = {
-                this.state.numberOfNotFree
-            }
-            lotto = {
-                lottoName
-            }
-            lottoOriginal = {
-                lottoNameOrginal
-            }
-            drawDate = {
-                drawDateString
-            }
-            /> {
-            lottoName.toLowerCase() !== this.stratchcardsName ? ( < Fact lotto = {
-                    lottoName
-                }
-                />) : ''} <
-                Footer offer = {
-                    offer
-                }
-                lotto = {
-                    lottoName
-                }
-                /> < /
-                Fragment >
-            );
-        }
+                </Media>
+                <div className={`main ${lottoName.toLowerCase() === this.stratchcardsName ? "main--hidden" : ""}`}>
+                    <div className="cont-zone">
+                        {offer === "freeticket" && (
+                            <h1
+                                className="main_title"
+                                dangerouslySetInnerHTML={{__html: t("freeticketMainTitle")}}
+                            />
+                        )}
+                        <div className={`main_subwrap ${offer !== "freeticket" ? "-vertical" : ""}`}>
+                            {offer !== "freeticket" ? (
+                                <MultipleTicketsPicker
+                                    scrollAppToForm={this.scrollToForm}
+                                    lotto={lottoName}
+                                    numberOfNotFree={this.state.numberOfNotFree}
+                                    ref={picker => (this.numberPicker = picker)}
+                                    price={this.state.price}
+                                />
+                            ) : (
+                                <NumberPicker
+                                    scrollAppToForm={this.scrollToForm}
+                                    lotto={lottoName}
+                                    ref={picker => (this.numberPicker = picker)}
+                                />
+                            )}
+                            <RegisterForm
+                                ref={this.formRef}
+                                offer={offer}
+                                submitHandler={this.passDataToSendingModule}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <Help
+                    offer={offer}
+                    numberOfNotFree={this.state.numberOfNotFree}
+                    lotto={lottoName}
+                    lottoOriginal={lottoNameOrginal}
+                    drawDate={drawDateString}
+                />
+                {lottoName.toLowerCase() !== this.stratchcardsName ? (<Fact lotto={lottoName} />) : ''}
+                <Footer offer={offer} lotto={lottoName} />
+            </Fragment>
+        );
     }
-
-    App.propTypes = {
-        pickerStore: object.isRequired,
-        t: func.isRequired
-    };
-
-    export default translate("AppText")(mobXConnect("pickerStore")(App));
+  }
+  
+  App.propTypes = {
+      pickerStore: object.isRequired,
+      t: func.isRequired
+  };
+  
+  export default translate("AppText")(mobXConnect("pickerStore")(App));
