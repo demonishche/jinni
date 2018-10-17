@@ -1,22 +1,34 @@
 {
   "AppText": {
-	  "notFilledTicketsError": "Whoops! You’ve forgotten the most important part – filling up your bonus tickets",
-	  "freeticketMainTitle": "Get your <u>FREE</u> line here:",
-	  "dataNotLoaded": "Data not loaded yet",
-	  "emailError": "The email address you have chosen is already in use. Try logging in with it. If you can't remember your password, just request a reset.",
-	  "generalRegError": "Whoops, an error occurred during registration. Please try again so we can start making your wishes come true."
+    "notFilledTicketsError": "Whoops! You’ve forgotten the most important part – filling up your bonus tickets",
+    "freeticketMainTitle": "Get your <u>FREE</u> line here:",
+    "dataNotLoaded": "Data not loaded yet",
+    "emailError": "The email address you have chosen is already in use. Try logging in with it. If you can't remember your password, just request a reset.",
+    "generalRegError": "Whoops, an error occurred during registration. Please try again so we can start making your wishes come true."
   },
   "headerDesktopText": {
-	"freeticketTitle": "Play the next <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> draw for <span>FREE</span>",
-	"million": "million",
-    "notfreeTitle":
-      "Get {{numberOfTickets}} <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> lines for the price of {{numberOfNotFree}}"
+    "freeticketTitle": "Play the next <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> draw for <span>FREE</span>",
+    "million": "million",
+    "notfreeTitle": "Get {{numberOfTickets}} <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> lines for the price of {{numberOfNotFree}}",
+    "jinnisScratchcards": "JINNI’S SCRATCHCARDS",
+    "scratchcardsGamesCount": "9 GAMES AT",
+    "scratchcardsTitle": "You could win <span className='win'>€{{data.Jackpot}}</span> in the next 10 seconds.",
+    "scratchcardsSubtitle": "Ready. Steady. Scratch!",
+    "scratchcardsOldPrice": "was",
+    "scratchcardsNowOnly": "now only",
+    "scratchcardsPlayNow": "PLAY NOW"
   },
   "headerMobileText": {
-	"freeticketTitle": "Play the next draw for <span>FREE</span>",
-	"million": "million",	
-    "notfreeTitle":
-      "Get <span>{{numberOfTickets}}</span> lines for the price of <span>{{numberOfNotFree}}</span> !",
+    "freeticketTitle": "Play the next draw for <span>FREE</span>",
+    "jinnisScratchcards": "JINNI’S SCRATCHCARDS",
+    "scratchcardsGamesCount": "9 GAMES AT",
+    "scratchcardsTitle": "You could win <span className='win'>€{{data.Jackpot}}</span> in the next 10 seconds.",
+    "scratchcardsSubtitle": "Ready. Steady. Scratch!",
+    "scratchcardsOldPrice": "was",
+    "scratchcardsNowOnly": "now only",
+    "scratchcardsPlayNow": "PLAY NOW",
+    "million": "million",
+    "notfreeTitle": "Get <span>{{numberOfTickets}}</span> lines for the price of <span>{{numberOfNotFree}}</span> !",
     "freeLabel": "FREE"
   },
   "helpSectionText": {
@@ -24,35 +36,25 @@
     "firstStepTitle": "Pick your lucky numbers",
     "firstStepScratchTitle": "Choose",
     "firstStepText": {
-      "megamillions":
-        "Select {{numbersAmount}} numbers from 1-{{maxNumber}} <br class='hide-big' />+ {{bonusAmount}} {{bonusName}} from 1-{{maxBonus}}. <br class='hide-big' />Or we can randomly choose for you when you click <br class='hide-big' /> “Quick Pick”",
-      "euromillions":
-        "Select {{numbersAmount}} numbers + {{bonusAmount}} {{bonusName}} or simply <br class='hide-sm' /> click 'Quick Pick' for a random selection",
-      "eurojackpot":
-        "Choose {{numbersAmount}} numbers between 1 and {{maxNumber}} and {{bonusAmount}} {{bonusName}} between {{minBonus}} and {{maxBonus}} or simply click 'Quick Pick' for a random selection",
-      "powerball":
-        "Choose {{numbersAmount}} numbers between 1 and {{maxNumber}} and a Bonus or click 'Quick Pick' for a random selection",
-      "6aus49":
-        "Select {{numbersAmount}} lucky numbers + a {{bonusName}} or click 'Quick Pick' for a random selection",
-      "irishlottery":
-        "Select {{numbersAmount}} numbers or simply click “Quick Pick” for a random selection.",
-      "scratchcards":
-      "Pick your favorite scratch cards ☝ you can choose according to Jackpot, odds or just by most value."
+      "megamillions": "Select {{numbersAmount}} numbers from 1-{{maxNumber}} <br class='hide-big' />+ {{bonusAmount}} {{bonusName}} from 1-{{maxBonus}}. <br class='hide-big' />Or we can randomly choose for you when you click <br class='hide-big' /> “Quick Pick”",
+      "euromillions": "Select {{numbersAmount}} numbers + {{bonusAmount}} {{bonusName}} or simply <br class='hide-sm' /> click 'Quick Pick' for a random selection",
+      "eurojackpot": "Choose {{numbersAmount}} numbers between 1 and {{maxNumber}} and {{bonusAmount}} {{bonusName}} between {{minBonus}} and {{maxBonus}} or simply click 'Quick Pick' for a random selection",
+      "powerball": "Choose {{numbersAmount}} numbers between 1 and {{maxNumber}} and a Bonus or click 'Quick Pick' for a random selection",
+      "6aus49": "Select {{numbersAmount}} lucky numbers + a {{bonusName}} or click 'Quick Pick' for a random selection",
+      "irishlottery": "Select {{numbersAmount}} numbers or simply click “Quick Pick” for a random selection.",
+      "scratchcards": "Pick your favorite scratch cards ☝ you can choose according to Jackpot, odds or just by most value."
     },
     "secondStep": {
       "freeticket": {
         "title": "Get your bet line for free",
         "text": {
-          "desktop":
-            "Fill out the short form and then click 'Claim<br class='hide-sm' />Free Bet' to secure your bet line for free",
-          "mobile":
-            "To place your bet for free, just fill <br class='hide-sm' />out the short form and click <br class='hide-sm' /> “Claim Free Bet”"
+          "desktop": "Fill out the short form and then click 'Claim<br class='hide-sm' />Free Bet' to secure your bet line for free",
+          "mobile": "To place your bet for free, just fill <br class='hide-sm' />out the short form and click <br class='hide-sm' /> “Claim Free Bet”"
         }
       },
       "notfree": {
         "title": "Get {{numberOfFreeLines}} free bet lines",
-        "text":
-          "Submit the form to place {{numberOfTickets}} bet lines<br class='hide-sm' />for the price of {{numberOfNotFree}}"
+        "text": "Submit the form to place {{numberOfTickets}} bet lines<br class='hide-sm' />for the price of {{numberOfNotFree}}"
       },
       "ScratchSecondStep": {
         "title": "SCRACTH",
@@ -61,49 +63,37 @@
 
     },
     "thirdStep": {
-	  "title": "Collect your winnings",
+      "title": "Collect your winnings",
       "thirdScratchTitle": "Collect Win",
-	  "timerTemplate": "{{days}}d {{hours}}h {{minutes}}m {{seconds}}s",
+      "timerTemplate": "{{days}}d {{hours}}h {{minutes}}m {{seconds}}s",
       "text": {
         "megamillions": {
-          "desktop":
-            "MegaMillions draws are held twice a week. To find out if you’re a winner, check the results after the next draw in <span class='help_timer'>{{timeRemains}}</span>",
-          "mobile":
-            "Wait for the upcoming draw that <br /> will take place in: <br /><span class='help_timer'>{{timeRemains}}</span> <br />to see how much you won"
+          "desktop": "MegaMillions draws are held twice a week. To find out if you’re a winner, check the results after the next draw in <span class='help_timer'>{{timeRemains}}</span>",
+          "mobile": "Wait for the upcoming draw that <br /> will take place in: <br /><span class='help_timer'>{{timeRemains}}</span> <br />to see how much you won"
         },
         "euromillions": {
-          "desktop":
-            "There are two EuroMillions draws every week. Be sure to check the results Follow the results of the next Euromillions draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner",
-          "mobile":
-            "There are two EuroMillions draws every week. Be sure to check the results Follow the results of the next Euromillions draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner"
+          "desktop": "There are two EuroMillions draws every week. Be sure to check the results Follow the results of the next Euromillions draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner",
+          "mobile": "There are two EuroMillions draws every week. Be sure to check the results Follow the results of the next Euromillions draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner"
         },
         "eurojackpot": {
-          "desktop":
-            "Follow the results of the next EuroJackpot <br/> draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re <br/> a winner",
-          "mobile":
-            "Follow the results of the next <br/> EuroJackpot draw on<br/> <span class='help_timer'>{{timeRemains}}</span><br/>to find out if you’re a winner"
+          "desktop": "Follow the results of the next EuroJackpot <br/> draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re <br/> a winner",
+          "mobile": "Follow the results of the next <br/> EuroJackpot draw on<br/> <span class='help_timer'>{{timeRemains}}</span><br/>to find out if you’re a winner"
         },
         "powerball": {
-          "desktop":
-            "Wait for the next Powerball on <br/> <span class='help_timer'>{{timeRemains}}</span> to see if you’re a winner",
-          "mobile":
-            "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
+          "desktop": "Wait for the next Powerball on <br/> <span class='help_timer'>{{timeRemains}}</span> to see if you’re a winner",
+          "mobile": "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
         },
         "6aus49": {
-          "desktop":
-            "Don't miss the next of two weekly draws on <br/> <span class='help_timer'>{{timeRemains}}</span> to see if you’re a winner",
-          "mobile":
-            "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
+          "desktop": "Don't miss the next of two weekly draws on <br/> <span class='help_timer'>{{timeRemains}}</span> to see if you’re a winner",
+          "mobile": "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
         },
         "irishlottery": {
           "desktop": "There are two Irish Lotto draws every week. Be sure to check the results Follow the results of the next Irish Lotto draw on <span class='help_timer'>{{timeRemains}}</span> to find out if you’re a winner.",
-          "mobile":
-            "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
+          "mobile": "Wait for the upcoming draw that will take place in <br/> <span class='help_timer'>{{timeRemains}}</span><br/> to see how much you won"
         },
         "scratchcards": {
           "desktop": "In scratch cards you win instantly no need to wait just scracth, win and get your winnings in your account 🍾. ",
-          "mobile":
-          "In scratch cards you win instantly no need to wait just scracth, win and get your winnings in your account 🍾. "
+          "mobile": "In scratch cards you win instantly no need to wait just scracth, win and get your winnings in your account 🍾. "
         }
       }
     }
@@ -157,8 +147,7 @@
       "quickPickBtn": "Quick Pick"
     },
     "mobile": {
-      "frameTitle":
-        "Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}}<br />& {{bonusAmount}} {{bonusName}} from {{minBonus}}-{{maxBonus}}",
+      "frameTitle": "Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}}<br />& {{bonusAmount}} {{bonusName}} from {{minBonus}}-{{maxBonus}}",
       "frameTitleNoBonus": "Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}}",
       "or": "or",
       "done": "Done",
@@ -167,18 +156,16 @@
     }
   },
   "multiPickerText": {
-    "title":
-      "Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}} and <br/>{{bonusAmount}} {{bonusName}} from {{minBonus}}-{{maxBonus}}",
-    "titleNoBonus":"Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}}",  
+    "title": "Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}} and <br/>{{bonusAmount}} {{bonusName}} from {{minBonus}}-{{maxBonus}}",
+    "titleNoBonus": "Pick {{numbersAmount}} numbers from {{minNumber}}-{{maxNumber}}",
     "quickPickBtn": "Quick pick",
     "freeLabel": "FREE",
-    "errorText":
-      "Oops! Looks like at least one of you numbers is not valid or a double! Please, choose another number.",
+    "errorText": "Oops! Looks like at least one of you numbers is not valid or a double! Please, choose another number.",
     "or": "or",
     "pickNumbersBtn": "pick numbers",
     "done": "Done",
     "modalTitle": "Pick {{numbersAmount}} numbers <br />& {{bonusAmount}} {{bonusName}}",
-    "modalTitleNoBonus":"Pick {{numbersAmount}} numbers",
+    "modalTitleNoBonus": "Pick {{numbersAmount}} numbers",
     "modalTitleCompleted": "All good here"
   },
   "formText": {
@@ -213,21 +200,16 @@
       "freeticketSubmit": "Claim free bet",
       "notfreeSubmit": "Play Now"
     },
-    "terms":
-      "<p class='form_terms_text'>I certify that I am at least 18 years old, or the legal minimum age in my country of residence. I accept that the customer funds protection rating is ‘Medium’ as outlined in the &nbsp;<a rel='noopener noreferrer' target='_blank' href='http://jinnilotto.com/en/terms-conditions/'>Terms and Conditions</a> which I accept, along with the &nbsp;<a rel='noopener noreferrer' target='_blank' href='https://jinnilotto.com/en/privacy-policy'>Privacy Policy</a>. We believe in responsible gambling. You can set your deposit limit and preferences &nbsp;<a rel='noopener noreferrer' target='_blank' href='https://jinnilotto.com/en/responsible-gaming-policy'>here</a>.</p>",
+    "terms": "<p class='form_terms_text'>I certify that I am at least 18 years old, or the legal minimum age in my country of residence. I accept that the customer funds protection rating is ‘Medium’ as outlined in the &nbsp;<a rel='noopener noreferrer' target='_blank' href='http://jinnilotto.com/en/terms-conditions/'>Terms and Conditions</a> which I accept, along with the &nbsp;<a rel='noopener noreferrer' target='_blank' href='https://jinnilotto.com/en/privacy-policy'>Privacy Policy</a>. We believe in responsible gambling. You can set your deposit limit and preferences &nbsp;<a rel='noopener noreferrer' target='_blank' href='https://jinnilotto.com/en/responsible-gaming-policy'>here</a>.</p>",
     "errors": {
-      "firstName":
-        "First name must contain a minimum of 2 and a maximum of 24 characters. It must also not contain any numbers or special characters",
-      "lastName":
-        "Last name must contain a minimum of 2 and a maximum of 24 characters. It must also not contain any numbers or special characters",
+      "firstName": "First name must contain a minimum of 2 and a maximum of 24 characters. It must also not contain any numbers or special characters",
+      "lastName": "Last name must contain a minimum of 2 and a maximum of 24 characters. It must also not contain any numbers or special characters",
       "emailError": "Hmmm, this doesn't look like a valid email. Please double check.",
       "passwordError": "For your security your password must have at least 8 characters",
       "codeError": "Zip code must contain a maximum of 10 characters",
       "generalError": "Sorry, this field is not valid",
-      "termsAgreedError":
-        "Sorry, we know you're in a hurry to play but you have to accept our terms and conditions to register",
-      "dateOfBirthError":
-        "Your date of birth does not match our \"over the age of 18\" requirement. This is one wish that Jinni the Genie can't grant you."
+      "termsAgreedError": "Sorry, we know you're in a hurry to play but you have to accept our terms and conditions to register",
+      "dateOfBirthError": "Your date of birth does not match our \"over the age of 18\" requirement. This is one wish that Jinni the Genie can't grant you."
     },
     "selectTitle": {
       "Mr": "Mr.",

@@ -34,6 +34,8 @@ class App extends Component {
     DrawDate: "2018-10-18 18:55:00",
     DrawID: 520,
     Jackpot: 70000,
+    PackagePrice: 14.99,
+    OriginPrice: 21.70,
     LotteryCurrency: "Euro",
     LotteryID: 35,
     LotteryName: "Scratchcards",
@@ -41,7 +43,9 @@ class App extends Component {
     TimeToResolve: 170399,
     TimeZone: "+11:0",
     WinningResult: "",
-}
+  }
+
+  stratchcardsName = 'scratchcards';
 
   formRef = React.createRef();
 
@@ -50,13 +54,13 @@ class App extends Component {
 
       let feedObject = {};
       
-    console.log(this.state.urlData.lotteryOrientation);
     if (this.state.urlData.lotteryOrientation === 'scratchcards') {
-        let lottoData = this.stratchcards;
+        // let lottoData = this.stratchcards;
+        this.getScratchcardsInfo();
         let pickerLottoData = allPickerLottoData[this.state.urlData.lotteryOrientation];
-        console.log(pickerLottoData)
+
         this.setState({
-            lottoData,
+            // lottoData,
             pickerLottoData
         });
     } else {
@@ -71,6 +75,52 @@ class App extends Component {
               console.log(error);
           });
         }
+  }
+
+  getScratchcardsInfo() {
+      let fetchData = {};
+      axios
+        .get("https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=246")
+        .then(response => {
+            fetchData = response.data;
+            console.log(fetchData)
+            this.stratchcardsName = 'scratchcards';
+
+            let lottoData = {
+                DrawDate: "2018-10-18 18:55:00",
+                DrawID: fetchData.PackageID,
+                Jackpot: fetchData.TotalJackpotAmount,
+                PackagePrice: fetchData.PackagePrice,
+                OriginPrice: fetchData.OriginPrice,
+                Jackpot: fetchData.TotalJackpotAmount,
+                LotteryCurrency: "Euro",
+                LotteryID: 35,
+                LotteryName: 'scratchcards',
+                RoundedJackpot: 12320000,
+                TimeToResolve: 170399,
+                TimeZone: "+11:0",
+                WinningResult: "",
+              }
+
+            lottoData['games'] = fetchData.Items.map(item => {
+                return {
+                    id: item.ItemID,
+                    name: item.Game.GameID
+                }
+            })
+
+            this.setState({
+                lottoData
+            });
+        })
+        .catch(error => {
+            console.log("feed.json retrieving error");
+            console.log(error);
+        });
+  }
+
+  isLottoEqual = _lottoName => {
+    return this.state.lottoData.LotteryName.toLowerCase().replace(/\s/g, "") === _lottoName;
   }
 
   selectLottoData = data => {
@@ -255,6 +305,7 @@ class App extends Component {
                               jackpot={jackpotString}
                               offer={offer}
                               numberOfNotFree={this.state.numberOfNotFree}
+                              data={this.state.lottoData}
                           />
                       ) : (
                           <DynamicMobileHeader
@@ -267,7 +318,7 @@ class App extends Component {
                       )
                   }
               </Media>
-              <div className={`main ${lottoName.toLowerCase() === "scratchcards" ? "main--hidden" : ""}`}>
+              <div className={`main ${lottoName.toLowerCase() === this.stratchcardsName ? "main--hidden" : ""}`}>
                   <div className="cont-zone">
                       {offer === "freeticket" && (
                           <h1
@@ -306,7 +357,7 @@ class App extends Component {
                   lottoOriginal={lottoNameOrginal}
                   drawDate={drawDateString}
               />
-              <Fact lotto={lottoName} />
+              {lottoName.toLowerCase() !== this.stratchcardsName ? (<Fact lotto={lottoName} />) : ''}
               <Footer offer={offer} />
           </Fragment>
       );

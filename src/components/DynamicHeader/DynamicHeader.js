@@ -38,32 +38,122 @@ class DynamicHeader extends Component {
 
   render() {
 
-	  const { lotto, jackpot, numberOfNotFree, t } = this.props;
+	  const { lotto, jackpot, numberOfNotFree, t, data } = this.props;
 	  const {ticketsData} = this.props.pickerStore;
       const lottoData = this.state.lottoData;
-
+        console.log(data)
       const jackpotDisplay = jackpot ? this.constructJackpot(jackpot) : undefined;
 
       return (
-
-          <header className="header" style={{ backgroundImage: `url(${lottoData.bg})` }}>
-              <img src={lottoData.people} alt="" className="header_people" />
-              <div className="cont-zone">
-			  {numberOfNotFree === 0 ? (
-				  <h2 className="header_title -with-logo" dangerouslySetInnerHTML={{__html:t("freeticketTitle",
-				  {lotteryLogo: lottoData.logo, lotteryName: lotto})}}>
-                      </h2>
-			  )  : (
-					  <h2 className="header_title -with-logo" dangerouslySetInnerHTML={{__html:t("notfreeTitle",
-					  {numberOfTickets:ticketsData.length, lotteryLogo: lottoData.logo, lotteryName: lotto, numberOfNotFree})}} >
-					  </h2>
-			  )}
-                  <div
-                      className="header_jackpot"
-                      dangerouslySetInnerHTML={{ __html: jackpotDisplay }}
-                  />
-              </div>
-          </header>
+        <div className='container__header'>
+            {lotto.toLowerCase() !== "scratchcards" ? (<div className={`headerWrapper`}>
+                <div className="top-bar">
+                    <div className="cont-zone">
+                    <img src="./assets/logo/logo_jinni-loto.svg" width="117" height="58" alt="Lotto Jinni" className="top-bar_logo" />
+                    </div>
+                </div>
+                <header className="header" style={{ backgroundImage: `url(${lottoData.bg})` }}>
+                    <img src={lottoData.people} alt="" className="header_people" />
+                    <div className="cont-zone">
+                    {numberOfNotFree === 0 ? (
+                        <h2 className="header_title -with-logo" dangerouslySetInnerHTML={{__html:t("freeticketTitle",
+                        {lotteryLogo: lottoData.logo, lotteryName: lotto})}}>
+                            </h2>
+                    )  : (
+                            <h2 className="header_title -with-logo" dangerouslySetInnerHTML={{__html:t("notfreeTitle",
+                            {numberOfTickets:ticketsData.length, lotteryLogo: lottoData.logo, lotteryName: lotto, numberOfNotFree})}} >
+                            </h2>
+                    )}
+                        <div
+                            className="header_jackpot"
+                            dangerouslySetInnerHTML={{ __html: jackpotDisplay }}
+                        />
+                    </div>
+                </header>
+            </div>) : (
+            <div className={`headerWrapper`}>
+                <header className="header-scratch" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
+                    <div className="header-scratch-wrapper">
+                        <div className="logo-scratch">
+                            <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
+                        </div>
+                        <div className="scrath-text">
+                            <p>{t("jinnisScratchcards")}</p>
+                        </div>
+                        <div className="title-scratch">
+                            <p>{t("scratchcardsGamesCount")} €{data.PackagePrice}</p>
+                        </div>
+                        <div className="under-title-text">
+                            <p dangerouslySetInnerHTML={{__html:t("scratchcardsTitle", {data: data})}}></p>
+                            <p>{t("scratchcardsSubtitle")}</p>
+                        </div>
+                        <div className="scratch-price">
+                            <span className="old-preice">
+                                <p className="text">{t("scratchcardsOldPrice")}</p>
+                                <p className="price">€{data.OriginPrice}</p>
+                            </span>
+                            <span className="curent-price">
+                                <p className="text">{t("scratchcardsNowOnly")} </p>
+                                <p className="price">€{data.PackagePrice}</p>
+                            </span>
+                        </div>
+                        <div className="scratch-button">
+                            <a href='#'>{t("scratchcardsPlayNow")}</a>
+                        </div>
+                    </div>
+                    {!!data.games ? (<div className="scratch-tickets">
+                        {data.games.map(item => {
+                             return (
+                                <div className="ticket">
+                                    <div className="ticket-1">
+                                        <img src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                                    </div>
+                                    <div className="ticket-2">
+                                        <img src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                                    </div>
+                                    <div className="ticket-3">
+                                        <img src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                                    </div>
+                                </div>
+                             )
+                        })}
+                         {/* <div className="first-ticket">
+                        <div className="ticket-1">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        <div className="ticket-2">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        <div className="ticket-3">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        </div>
+                        <div className="second-ticket">
+                        <div className="ticket-1">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        <div className="ticket-2">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        <div className="ticket-3">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        </div>
+                        <div className="third-ticket">
+                        <div className="ticket-1">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        <div className="ticket-2">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        <div className="ticket-3">
+                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
+                        </div>
+                        </div>  */}
+                    </div>) : ''}
+                </header>
+            </div>)}
+        </div>
       );
   }
 }
