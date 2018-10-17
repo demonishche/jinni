@@ -265,9 +265,9 @@ padding-bottom: 32px;
 }
 .scrath-text p {
 /* Style for "JINNI’S SC" */
-/*background-image: linear-gradient(180deg, #fffefc 0%, #fbe8cb 100%);*/
-background-clip: text;
-text-shadow: -1px 1px 0 #af5513, 0 2px 4px rgba(0, 0, 0, 0.5);
+background: linear-gradient(180deg, #fffefc 0%, #fbe8cb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 color: #fccf92;
 font-family: Poppins;
 font-size: 18px;
@@ -278,26 +278,25 @@ text-align: center;
 }
 .title-scratch p{
 /* Style for "9 GAMES AT" */
-/*background-image: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);*/
-background-clip: text;
-text-shadow: 0 1px 5px #755307;
+background: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 color: #ffffff;
 font-family: Poppins;
-font-size: 48px;
+font-size: 44px;
 font-weight: 700;
 line-height: 35px;
 text-transform: uppercase;
 text-align: center;
 margin: 23px 0 23px 0;
 }
-.under-title-text {
-  /* Style for "You could" */
-/*background-image: linear-gradient(180deg, #fffefc 0%, #fbe8cb 100%);*/
-background-clip: text;
-text-shadow: -1px 1px 0 #af5513;
+.under-title-text p {
+  background: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 color: #ffffff;
-font-family: "Poppins Medium";
-font-size: 21px;
+font-family: "Poppins";
+font-size: 20px;
 font-weight: 500;
 line-height: 30px;
 padding-bottom: 17px;
