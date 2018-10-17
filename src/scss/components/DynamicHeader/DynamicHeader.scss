@@ -482,3 +482,30 @@ margin: 0 auto;
   }
 
 }
+
+@media (max-width: 412px){
+  .scratch-tickets {
+    position: relative;
+    left: -5%;
+  }
+}
+
+@media (max-width: 376px){
+  .scratch-tickets {
+    position: relative;
+    left: -10%;
+  }
+}
+@media (max-width: 361px){
+  .scratch-tickets {
+    position: relative;
+    left: -13%;
+  }
+}
+
+@media (max-width: 321px){
+  .scratch-tickets {
+    position: relative;
+    left: -20%;
+  }
+}

@@ -36,6 +36,7 @@
     "firstStepTitle": "Pick your lucky numbers",
     "firstStepScratchTitle": "Choose",
     "firstStepText": {
+      "firstStepScratchTitle": "Choose",
       "megamillions": "Select {{numbersAmount}} numbers from 1-{{maxNumber}} <br class='hide-big' />+ {{bonusAmount}} {{bonusName}} from 1-{{maxBonus}}. <br class='hide-big' />Or we can randomly choose for you when you click <br class='hide-big' /> “Quick Pick”",
       "euromillions": "Select {{numbersAmount}} numbers + {{bonusAmount}} {{bonusName}} or simply <br class='hide-sm' /> click 'Quick Pick' for a random selection",
       "eurojackpot": "Choose {{numbersAmount}} numbers between 1 and {{maxNumber}} and {{bonusAmount}} {{bonusName}} between {{minBonus}} and {{maxBonus}} or simply click 'Quick Pick' for a random selection",
