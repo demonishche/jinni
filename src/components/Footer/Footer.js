@@ -46,7 +46,7 @@ const Footer = ({offer, t, i18n, lotto}) => {
                     </div>
                     {lotto === 'scratchcards' ? (
                         <div className='helpLogo__container'>
-                            <img src='./assets/logo/logo_jinni-loto.svg' alt='logo'/>
+                            <img src='./assets/logo/footer_logo.png' alt='logo' className='helpLogo'/>
                         </div>
                     ) : ''}
                 </div>

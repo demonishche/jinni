@@ -307,7 +307,7 @@ padding-bottom: 17px;
 
 }
 
-.under-title-text .win {
+.under-title-text span {
 /* Text style for "€100.000" */
 font-family: Poppins;
 font-weight: 700;
@@ -339,16 +339,16 @@ text-align: center;
 
 color: #ffffff;
 font-family: Poppins;
-font-size: 34px;
+font-size: 26px;
 font-weight: 400;
 text-decoration: line-through;
 }
 
 .curent-price .price {
   /* Style for "€8.00" */
-/*background-image: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);*/
-background-clip: text;
-text-shadow: 0 1px 5px #755307;
+  background: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 color: #ffffff;
 font-family: Poppins;
 font-size: 34px;
@@ -406,4 +406,79 @@ margin: 0 auto;
  bottom: 30px;
  transform: rotate(70deg);
  transform-origin: center center;
+}
+
+@media (max-width: 767px){
+  .title-scratch p {
+    font-size: 30px;
+  }
+  .under-title-text p {
+    font-size: 16px;
+  }
+
+  .scratch-tickets {
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  .ticket:nth-child(1) {
+    transform: rotate(340deg) scale(0.8);
+    top: 390px;
+    position: relative;
+    left: 0px;
+  }
+
+
+  .ticket:nth-child(2) {
+    transform: rotate(357deg) scale(0.8);
+    top: 380px;
+    left: 10px;
+    position: relative;
+  }
+
+  .ticket:nth-child(3)  {
+    transform: rotate(375deg) scale(0.8);
+    top: 387px;
+    left: 40px;
+    position: relative;
+  }
+
+}
+@media (max-width: 450px){
+  .title-scratch p {
+    font-size: 30px;
+  }
+  .under-title-text p {
+    font-size: 16px;
+  }
+
+  .scratch-tickets {
+    display: block;
+    margin: 0 auto;
+    //width: 320px;
+  }
+
+  .ticket:nth-child(1) {
+    transform: rotate(340deg) scale(0.6);
+    top: 350px;
+    position: relative;
+    left: 0px;
+  }
+
+
+  .ticket:nth-child(2) {
+    transform: rotate(357deg) scale(0.6);
+    top: 340px;
+    left: 10px;
+    position: relative;
+  }
+
+  .ticket:nth-child(3)  {
+    transform: rotate(375deg) scale(0.6);
+    top: 347px;
+    left: 40px;
+    position: relative;
+  }
+
 }
