@@ -3,7 +3,8 @@
 	height: 252px;
 	background-color: white;	
     .cont-zone {
-        display: flex;
+				display: flex;
+				flex-wrap: wrap;
         height: 100%;
         justify-content: center;
         align-items: center;
@@ -17,6 +18,12 @@
 			border-color: rgba(215, 231, 255, 0.5);
 		}
 	}
+}
+
+.helpLogo__container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .footer_affiliates_sub-wrap {

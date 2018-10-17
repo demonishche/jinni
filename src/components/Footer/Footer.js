@@ -2,7 +2,7 @@ import React from "react";
 import {string, func} from "prop-types";
 import {translate} from "react-i18next";
 
-const Footer = ({offer, t, i18n}) => {
+const Footer = ({offer, t, i18n, lotto}) => {
     const termsPages = {
         "freeticket": "1-ticket-free",
         "freeticketv2": "1-ticket-free",
@@ -44,6 +44,11 @@ const Footer = ({offer, t, i18n}) => {
                           {/*<img src="./assets/logo/logo_jinni-loto.svg" alt="Logo"/>*/}
                         {/*</div>*/}
                     </div>
+                    {lotto === 'scratchcards' ? (
+                        <div className='helpLogo__container'>
+                            <img src='./assets/logo/logo_jinni-loto.svg' alt='logo'/>
+                        </div>
+                    ) : ''}
                 </div>
             </section>
             <section className="footer_copyright">

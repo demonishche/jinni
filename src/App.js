@@ -359,7 +359,7 @@ class App extends Component {
                   drawDate={drawDateString}
               />
               {lottoName.toLowerCase() !== this.stratchcardsName ? (<Fact lotto={lottoName} />) : ''}
-              <Footer offer={offer} />
+              <Footer offer={offer} lotto={lottoName} />
           </Fragment>
       );
   }

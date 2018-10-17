@@ -35,7 +35,7 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                     <img src={iconArrow} alt="next" className="help_arrow" />
                     {offer.indexOf("freeticket") !== -1 ? (
                         <div className="help_step">
-                            <img src={iconGet} alt="" className="help_step_icon" />
+                            <img src={lotto !== 'scratchcards' ? iconGet : iconScratch} alt="" className="help_step_icon" />
                             <h4 className="help_step_title">{t("secondStep.freeticket.title")}</h4>
                             <Media query="(min-width: 768px)">
                                 {matches =>
@@ -51,7 +51,7 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
                         </div>
                     ) : (
                         <div className="help_step">
-                            <img src={iconGet} alt="" className="help_step_icon" />
+                            <img src={lotto !== 'scratchcards' ? iconGet : iconScratch} alt="" className="help_step_icon" />
                             <h4 className="help_step_title">
                                 {t("secondStep.notfree.title", {numberOfFreeLines: pickerStore.ticketsData.length - numberOfNotFree})}
                             </h4>
