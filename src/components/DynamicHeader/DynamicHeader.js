@@ -117,39 +117,6 @@ class DynamicHeader extends Component {
                                 </div>
                              )
                         })}
-                         {/* <div className="first-ticket">
-                        <div className="ticket-1">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        <div className="ticket-2">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        <div className="ticket-3">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        </div>
-                        <div className="second-ticket">
-                        <div className="ticket-1">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        <div className="ticket-2">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        <div className="ticket-3">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        </div>
-                        <div className="third-ticket">
-                        <div className="ticket-1">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        <div className="ticket-2">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        <div className="ticket-3">
-                            <img src="http://images.jinnilotto.com/lp/scratchcards/raid_the_piggy_bank.png" alt="pick" />
-                        </div>
-                        </div>  */}
                     </div>) : ''}
                 </header>
             </div>)}

@@ -244,3 +244,168 @@
   color: #afb6d2;
   text-transform: uppercase;
 }
+
+
+/* ------------ SCRATCHCARDS HEADER ---------------------- */
+
+.header-scratch {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.logo-scratch {
+width: 106px;
+display: block;
+margin: 0 auto;
+padding-top: 32px;
+padding-bottom: 32px;
+}
+.scrath-text p {
+/* Style for "JINNI’S SC" */
+/*background-image: linear-gradient(180deg, #fffefc 0%, #fbe8cb 100%);*/
+background-clip: text;
+text-shadow: -1px 1px 0 #af5513, 0 2px 4px rgba(0, 0, 0, 0.5);
+color: #fccf92;
+font-family: Poppins;
+font-size: 18px;
+font-weight: 700;
+line-height: 52px;
+text-transform: uppercase;
+text-align: center;
+}
+.title-scratch p{
+/* Style for "9 GAMES AT" */
+/*background-image: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);*/
+background-clip: text;
+text-shadow: 0 1px 5px #755307;
+color: #ffffff;
+font-family: Poppins;
+font-size: 48px;
+font-weight: 700;
+line-height: 35px;
+text-transform: uppercase;
+text-align: center;
+margin: 23px 0 23px 0;
+}
+.under-title-text {
+  /* Style for "You could" */
+/*background-image: linear-gradient(180deg, #fffefc 0%, #fbe8cb 100%);*/
+background-clip: text;
+text-shadow: -1px 1px 0 #af5513;
+color: #ffffff;
+font-family: "Poppins Medium";
+font-size: 21px;
+font-weight: 500;
+line-height: 30px;
+padding-bottom: 17px;
+
+}
+.under-title-text p {
+  text-align: center;
+
+}
+
+.under-title-text .win {
+/* Text style for "€100.000" */
+font-family: Poppins;
+font-weight: 700;
+}
+.scratch-price {
+display: flex;
+flex-direction: row;
+-ms-align-items: center;
+align-items: center;
+justify-content: center;
+}
+
+.curent-price {
+  margin-left: 30px;
+}
+
+
+.scratch-price  .text {
+color: #ffffff;
+font-family: Poppins;
+font-size: 20px;
+font-weight: 400;
+/* Text style for "was" */
+letter-spacing: -0.3px;
+text-align: center;
+}
+.old-preice .price {
+/* Style for "€21.00" */
+
+color: #ffffff;
+font-family: Poppins;
+font-size: 34px;
+font-weight: 400;
+text-decoration: line-through;
+}
+
+.curent-price .price {
+  /* Style for "€8.00" */
+/*background-image: linear-gradient(180deg, #ffffff 0%, #fcf8d2 100%);*/
+background-clip: text;
+text-shadow: 0 1px 5px #755307;
+color: #ffffff;
+font-family: Poppins;
+font-size: 34px;
+font-weight: 700;
+line-height: 35px;
+text-transform: uppercase;
+}
+
+.scratch-button a {
+color: #ffffff;
+font-family: "Poppins Semi Bold";
+font-size: 22px;
+font-weight: 600;
+text-transform: uppercase;
+text-align: center;
+width: 252px;
+border-radius: 30px;
+background-color: #46cf00;
+display: block;
+margin: 30px auto;
+text-decoration: none;
+padding:13px 0 13px 0;
+}
+
+.scratch-tickets {
+width: 720px;
+display: block;
+margin: 0 auto;
+}
+
+.ticket:nth-child(2) {
+position: relative;
+left: 200px;
+top: 400px	
+}
+
+.ticket:nth-child(3)  {
+position: relative;
+left: 400px;
+top: 400px	
+}
+
+.ticket-1 img{
+ position: absolute;
+ bottom: 30px;
+ transform: rotate(80deg);
+
+}
+.ticket-2 img{
+ position: absolute;
+ bottom: 30px;
+ transform: rotate(84deg);
+
+}
+.ticket-3 img{
+ position: absolute;
+ bottom: 30px;
+ transform: rotate(88deg);
+
+}
