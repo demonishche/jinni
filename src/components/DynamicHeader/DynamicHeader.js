@@ -51,7 +51,6 @@ class DynamicHeader extends Component {
   generateImegas = (count, item, itemIndex, gamesCount) => {
     const { data } = this.props;
       const delta = 90 / data.gamesTypesCount;
-      console.log(270 + delta*(itemIndex - Math.floor(data.gamesTypesCount/2)))
       let result = [];
       for (let i = 0; i < count; i++) {
         result.push(

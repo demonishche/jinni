@@ -106,15 +106,17 @@ class DynamicMobileHeader extends Component {
   }
 
   generateImegas = (count, item, itemIndex) => {
-    let result = [];
-    for (let i = 0; i < count; i++) {
-      result.push(
-          <div key={i} className="ticket-item">
-              <img style={{transform: `rotate(${70 + 15*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
-          </div>
-      )
-    }
-    return result;
+    const { data } = this.props;
+      const delta = 90 / data.gamesTypesCount;
+      let result = [];
+      for (let i = 0; i < count; i++) {
+        result.push(
+            <div key={i} className="ticket-item">
+                <img style={{transform: `rotate(${270 + delta*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: (delta < 30 ? 30 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+            </div>
+        )
+      }
+      return result;
   }
 
   render() {
