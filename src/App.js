@@ -123,11 +123,13 @@ class App extends Component {
                     // TimeZone: "+11:0",
                     WinningResult: "",
                     Discount: fetchData.Discount,
-                    gamesCount: 0
+                    gamesCount: 0,
+                    gamesTypesCount: 0
                 }
 
                 lottoData['games'] = fetchData.Items.map(item => {
                     lottoData.gamesCount += parseInt(item.NumberOfEntries);
+                    lottoData.gamesTypesCount++;
 
                         return {
                             id: item.ItemID,

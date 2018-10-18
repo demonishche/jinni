@@ -48,12 +48,15 @@ class DynamicHeader extends Component {
       return `https://${apiHost}${link}`;
   }
 
-  generateImegas = (count, item, itemIndex) => {
+  generateImegas = (count, item, itemIndex, gamesCount) => {
+    const { data } = this.props;
+      const delta = 90 / data.gamesTypesCount;
+      console.log(270 + delta*(itemIndex - Math.floor(data.gamesTypesCount/2)))
       let result = [];
       for (let i = 0; i < count; i++) {
         result.push(
             <div key={i} className="ticket-item">
-                <img style={{transform: `rotate(${270 + 7*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                <img style={{transform: `rotate(${270 + delta*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: (delta < 30 ? 30 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
             </div>
         )
       }
@@ -128,7 +131,7 @@ class DynamicHeader extends Component {
                              return (
                                 <div key={itemIndex} className="ticket">
                                     {
-                                        this.generateImegas(item.entries, item, itemIndex)
+                                        this.generateImegas(item.entries, item, itemIndex, data.gamesCount)
                                     }
                                 </div>
                              )
