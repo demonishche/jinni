@@ -120,7 +120,8 @@ const lottoData = {
         "5for2_incentiveCode": "5f2_irish_reg"
     },
     "scratchcards": {
-
+        freeticket_packageId: 456,
+        freeticket_incentiveCode: "free_ticket_irish_reg",
     }
 };
 

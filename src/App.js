@@ -179,6 +179,9 @@ class App extends Component {
             "free_ticket_em",
             packageId = lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_packageId`] || "255";
 
+        if (offer.indexOf("freeticket") === -1 && offer.indexOf("for") === -1)
+            location.href = location.origin;
+        
         const numberOfTickets = this.setNumberOfTicketsInStore(offer);
         this.setNumberOfNotfreetickets(offer);
 
