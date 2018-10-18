@@ -1,4 +1,4 @@
-const liveHost = "stage-lp.jinnilotto.com";
+const liveHost = "lp.jinnilotto.com";
 
 const liveApi = "api.jinnilotto.com";
 const stageApi = "stage-api.jinnilotto.com";
