@@ -465,26 +465,9 @@ margin: 0 auto;
     //width: 320px;
   }
 
-  .ticket:nth-child(1) {
-    transform: rotate(340deg) scale(0.6);
-    top: 350px;
-    position: relative;
-    left: 0px;
-  }
-
-
-  .ticket:nth-child(2) {
-    transform: rotate(357deg) scale(0.6);
-    top: 340px;
-    left: 10px;
-    position: relative;
-  }
-
-  .ticket:nth-child(3)  {
-    transform: rotate(375deg) scale(0.6);
-    top: 347px;
-    left: 40px;
-    position: relative;
+  .ticket {
+    transform: scale(0.6);
+    left: 45%;
   }
 
 }
