@@ -52,6 +52,8 @@ class DynamicHeader extends Component {
     const { data } = this.props;
       const delta = 90 / data.gamesTypesCount;
       let result = [];
+      if (count > 5)
+        count = 5;
       for (let i = 0; i < count; i++) {
         result.push(
             <div key={i} className="ticket-item">
