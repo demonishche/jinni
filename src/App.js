@@ -99,7 +99,9 @@ class App extends Component {
             .get(link + incentiveID)
             .then(response => {
                 fetchData = response.data;
-
+                if (!!fetchData.ErrorID)
+                    location.href = location.origin;
+                    
                 this.stratchcardsName = 'scratchcards';
 
                 let lottoData = {
