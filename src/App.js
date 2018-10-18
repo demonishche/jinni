@@ -93,7 +93,7 @@ class App extends Component {
     }
 
     getScratchcardsInfo() {
-        const liveHost = "lp.jinnilotto.com";
+        const stageHost = "stage-lp.jinnilotto.com";
         let fetchData = {};
         const incentiveID = getParamFromURL("incentiveId");
         console.log(incentiveID);
@@ -102,12 +102,12 @@ class App extends Component {
 
         let link = '';
         let mode = 'live';
-        if (window.location.hostname.includes(liveHost)) {
-            link = 'https://api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
-            mode = 'live';
-        } else {
+        if (window.location.hostname.includes(stageHost)) {
             link = 'https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
             mode = 'stage';
+        } else {
+            link = 'https://api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
+            mode = 'live';
         }
         axios
             .get(link + incentiveID)

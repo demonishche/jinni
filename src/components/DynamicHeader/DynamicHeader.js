@@ -8,7 +8,7 @@ import {translate} from "react-i18next";
 import allLottoData from "./headerLottoData";
 
 import {roundDecimal, roundMillions, reverseString, mapStringToImages} from "./jackpotTools";
-const liveHost = "lp.jinnilotto.com";
+const stageHost = "stage-lp.jinnilotto.com";
 
 class DynamicHeader extends Component {
   state = {
@@ -45,10 +45,10 @@ class DynamicHeader extends Component {
 
       const link = `?incentiveId=${data.IncentiveID}&incentiveCode=${urlData.packageId}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`
 
-      if (window.location.hostname.includes(liveHost))
-        return `https://jinnilotto.com${link}`;
-      else
+      if (window.location.hostname.includes(stageHost))
         return `https://stage.jinnilotto.com${link}`;
+      else
+        return `https://jinnilotto.com${link}`;
   }
 
   generateImegas = (count, item, itemIndex) => {
