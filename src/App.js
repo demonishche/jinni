@@ -174,10 +174,9 @@ class App extends Component {
             offer = getParamFromURL("offer").toLowerCase() || "freeticket",
             redirectUrl = getParamFromURL("redirectUrl") || "/cart",
             affiliateId = bTag.length > 0 ? bTag.substring(0, bTag.indexOf("_")) : "",
-            incentiveCode =
-            lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_incentiveCode`] ||
+            incentiveCode = getParamFromURL("incentiveCode") || lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_incentiveCode`] ||
             "free_ticket_em",
-            packageId = lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_packageId`] || "255";
+            packageId = getParamFromURL("packageId") || lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_packageId`] || "255";
 
         if (offer.indexOf("freeticket") === -1 && offer.indexOf("for") === -1)
             location.href = location.origin;
