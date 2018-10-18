@@ -93,22 +93,13 @@ class App extends Component {
     }
 
     getScratchcardsInfo() {
-        const stageHost = "stage-lp.jinnilotto.com";
         let fetchData = {};
         const incentiveID = getParamFromURL("incentiveId");
 
         if (!incentiveID)
             location.href = location.origin;
 
-        let link = '';
-        let mode = 'live';
-        if (window.location.hostname.includes(stageHost)) {
-            link = 'https://stage-api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
-            mode = 'stage';
-        } else {
-            link = 'https://api.jinnilotto.com/affiliate/getPackageByIncentive/package.json?incentiveId=';
-            mode = 'live';
-        }
+        let link = 'https://' + apiHost + '/affiliate/getPackageByIncentive/package.json?incentiveId=';
         axios
             .get(link + incentiveID)
             .then(response => {
@@ -138,19 +129,11 @@ class App extends Component {
                 lottoData['games'] = fetchData.Items.map(item => {
                     lottoData.gamesCount += parseInt(item.NumberOfEntries);
 
-                    // if (mode === 'stage') {
                         return {
                             id: item.ItemID,
                             name: item.Game.GameID,
                             entries: item.NumberOfEntries
                         }
-                    // } else {
-                    //     return {
-                    //         id: item.ItemID,
-                    //         name: item.Lottery.ID,
-                    //         entries: item.NumberOfEntries
-                    //     }
-                    // }
                 })
 
                 this.setState({

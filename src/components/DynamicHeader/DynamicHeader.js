@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { mobXConnect } from "../../tools/toolFunctions";
 import {translate} from "react-i18next";
-
-
+import {
+    apiHost
+} from "../../tools/envSettings";
 
 import allLottoData from "./headerLottoData";
 
 import {roundDecimal, roundMillions, reverseString, mapStringToImages} from "./jackpotTools";
-const stageHost = "stage-lp.jinnilotto.com";
 
 class DynamicHeader extends Component {
   state = {
@@ -43,12 +43,9 @@ class DynamicHeader extends Component {
     if (!data.Discount)
         return '';
 
-      const link = `?incentiveId=${data.IncentiveID}&incentiveCode=${urlData.packageId}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`
-
-      if (window.location.hostname.includes(stageHost))
-        return `https://stage.jinnilotto.com${link}`;
-      else
-        return `https://jinnilotto.com${link}`;
+      const link = `?incentiveId=${data.IncentiveID}&incentiveCode=${urlData.packageId}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`;
+    
+      return `https://${apiHost}${link}`;
   }
 
   generateImegas = (count, item, itemIndex) => {

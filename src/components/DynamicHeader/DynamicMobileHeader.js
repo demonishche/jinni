@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {string, func, object, number} from "prop-types";
 import {translate} from "react-i18next";
+import {
+    apiHost
+} from "../../tools/envSettings";
 
 import headerLottoData from "./headerLottoData";
 import pickerLottoData from "../NumberPicker/pickerLottoData";
@@ -99,10 +102,7 @@ class DynamicMobileHeader extends Component {
 
       const link = `?incentiveId=${data.Discount.IncentiveID}&incentiveCode=${urlData.packageId}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`
 
-      if (window.location.hostname.includes(liveHost))
-        return `https://jinnilotto.com${link}`;
-      else
-        return `https://stage.jinnilotto.com${link}`;
+        return `https://${apiHost}${link}`;
   }
 
   generateImegas = (count, item, itemIndex) => {
