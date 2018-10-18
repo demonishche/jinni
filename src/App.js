@@ -45,21 +45,6 @@ class App extends Component {
         documentReady: false
     };
 
-    stratchcards = {
-        DrawDate: "2018-10-18 18:55:00",
-        DrawID: 520,
-        Jackpot: 70000,
-        PackagePrice: 14.99,
-        OriginPrice: 21.70,
-        LotteryCurrency: "Euro",
-        LotteryID: 35,
-        LotteryName: "Scratchcards",
-        RoundedJackpot: 12320000,
-        TimeToResolve: 170399,
-        TimeZone: "+11:0",
-        WinningResult: "",
-    }
-
     stratchcardsName = 'scratchcards';
 
     formRef = React.createRef();
@@ -94,10 +79,20 @@ class App extends Component {
 
     getScratchcardsInfo() {
         let fetchData = {};
-        const incentiveID = getParamFromURL("incentiveId");
+        let incentiveID = getParamFromURL("incentiveId");
+        let incentiveCode = getParamFromURL("incentiveCode");
+        const offer = getParamFromURL("offer");
 
         if (!incentiveID)
             location.href = location.origin;
+
+        if (!incentiveCode && !offer) {
+            location.href = location.origin;
+            
+            if (!incentiveCode) {
+                incentiveCode = this.state.urlData.incentiveCode;
+            }
+        }
 
         let link = 'https://' + apiHost + '/affiliate/getPackageByIncentive/package.json?incentiveId=';
         axios
@@ -109,13 +104,14 @@ class App extends Component {
 
                 let lottoData = {
                     DrawDate: "2018-10-18 18:55:00",
-                    DrawID: fetchData.PackageID,
+                    PackageID: fetchData.PackageID,
                     Jackpot: fetchData.TotalJackpotAmount,
                     PackagePrice: fetchData.PackagePrice,
                     OriginPrice: fetchData.OriginPrice,
                     Jackpot: fetchData.TotalJackpotAmount,
                     LotteryCurrency: fetchData.currency,
                     incentiveID: incentiveID,
+                    incentiveCode: incentiveCode,
                     currency: fetchData.currecy || 'Euro',
                     LotteryName: 'scratchcards',
                     // RoundedJackpot: 12320000,
@@ -124,7 +120,7 @@ class App extends Component {
                     WinningResult: "",
                     Discount: fetchData.Discount,
                     gamesCount: 0,
-                    gamesTypesCount: 0
+                    gamesTypesCount: 0,
                 }
 
                 lottoData['games'] = fetchData.Items.map(item => {

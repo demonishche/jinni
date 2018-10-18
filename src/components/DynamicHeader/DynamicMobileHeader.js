@@ -100,7 +100,7 @@ class DynamicMobileHeader extends Component {
     if (!data.Discount)
         return '';
 
-      const link = `?incentiveId=${data.Discount.IncentiveID}&incentiveCode=${urlData.packageId}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`
+      const link = `?incentiveId=${data.incentiveID}&incentiveCode=${data.incentiveCode}&mc=${urlData.mc}&jlpid=${urlData.jlpid}&btag=${urlData.bTag}&campaign=${urlData.campaign}&referral=${urlData.referral}&Lang=${urlData.lang}&redirectUrl=cart&action=pay`
 
         return `https://${apiHost}${link}`;
   }
