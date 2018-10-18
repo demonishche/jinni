@@ -138,19 +138,19 @@ class App extends Component {
                 lottoData['games'] = fetchData.Items.map(item => {
                     lottoData.gamesCount += parseInt(item.NumberOfEntries);
 
-                    if (mode === 'stage') {
+                    // if (mode === 'stage') {
                         return {
                             id: item.ItemID,
                             name: item.Game.GameID,
                             entries: item.NumberOfEntries
                         }
-                    } else {
-                        return {
-                            id: item.ItemID,
-                            name: item.Lottery.ID,
-                            entries: item.NumberOfEntries
-                        }
-                    }
+                    // } else {
+                    //     return {
+                    //         id: item.ItemID,
+                    //         name: item.Lottery.ID,
+                    //         entries: item.NumberOfEntries
+                    //     }
+                    // }
                 })
 
                 this.setState({
