@@ -147,7 +147,7 @@ class App extends Component {
                     } else {
                         return {
                             id: item.ItemID,
-                            name: item.Lottery.Name,
+                            name: item.Lottery.ID,
                             entries: item.NumberOfEntries
                         }
                     }
