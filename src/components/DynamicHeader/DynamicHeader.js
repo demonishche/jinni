@@ -55,7 +55,7 @@ class DynamicHeader extends Component {
       let result = [];
       for (let i = 0; i < count; i++) {
         result.push(
-            <div className="ticket-item">
+            <div key={i} className="ticket-item">
                 <img style={{transform: `rotate(${270 + 7*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
             </div>
         )
@@ -67,7 +67,6 @@ class DynamicHeader extends Component {
 	  const { lotto, jackpot, numberOfNotFree, t, data } = this.props;
 	  const {ticketsData} = this.props.pickerStore;
       const lottoData = this.state.lottoData;
-        console.log(data)
       const jackpotDisplay = jackpot ? this.constructJackpot(jackpot) : undefined;
 
       return (
@@ -130,7 +129,7 @@ class DynamicHeader extends Component {
                     {!!data.games ? (<div className="scratch-tickets">
                         {data.games.map((item, itemIndex) => {
                              return (
-                                <div className="ticket">
+                                <div key={itemIndex} className="ticket">
                                     {
                                         this.generateImegas(item.entries, item, itemIndex)
                                     }

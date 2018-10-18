@@ -109,7 +109,7 @@ class DynamicMobileHeader extends Component {
     let result = [];
     for (let i = 0; i < count; i++) {
       result.push(
-          <div className="ticket-item">
+          <div key={i} className="ticket-item">
               <img style={{transform: `rotate(${70 + 15*itemIndex + i*4}deg)`}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
           </div>
       )
@@ -206,7 +206,7 @@ class DynamicMobileHeader extends Component {
                     {!!data.games ? (<div className="scratch-tickets">
                         {data.games.map((item, itemIndex) => {
                              return (
-                                <div className="ticket">
+                                <div key={itemIndex} className="ticket">
                                     {
                                         this.generateImegas(item.entries, item, itemIndex)
                                     }

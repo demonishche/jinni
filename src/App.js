@@ -96,7 +96,7 @@ class App extends Component {
         const stageHost = "stage-lp.jinnilotto.com";
         let fetchData = {};
         const incentiveID = getParamFromURL("incentiveId");
-        console.log(incentiveID);
+
         if (!incentiveID)
             location.href = location.origin;
 
@@ -113,7 +113,7 @@ class App extends Component {
             .get(link + incentiveID)
             .then(response => {
                 fetchData = response.data;
-                console.log(fetchData)
+
                 this.stratchcardsName = 'scratchcards';
 
                 let lottoData = {
@@ -125,7 +125,7 @@ class App extends Component {
                     Jackpot: fetchData.TotalJackpotAmount,
                     LotteryCurrency: fetchData.currency,
                     incentiveID: incentiveID,
-                    // LotteryID: 35,
+                    currency: fetchData.currecy || 'Euro',
                     LotteryName: 'scratchcards',
                     // RoundedJackpot: 12320000,
                     // TimeToResolve: 170399,
@@ -136,7 +136,6 @@ class App extends Component {
                 }
 
                 lottoData['games'] = fetchData.Items.map(item => {
-                    console.log(item.NumberOfEntries)
                     lottoData.gamesCount += parseInt(item.NumberOfEntries);
 
                     if (mode === 'stage') {
@@ -148,7 +147,7 @@ class App extends Component {
                     } else {
                         return {
                             id: item.ItemID,
-                            name: item.Lottery.ID,
+                            name: item.Lottery.Name,
                             entries: item.NumberOfEntries
                         }
                     }
@@ -218,7 +217,6 @@ class App extends Component {
             referral: referral.length > 0 ? referral : window.location.href
         };
 
-        console.log(urlData);
         const newUrlData = Object.assign({}, this.state.urlData, urlData);
 
         this.setState({
@@ -233,7 +231,7 @@ class App extends Component {
         );
         const data = resp.data;
         const price = (parseFloat(data.OnlinePrice) / numberOfTickets).toFixed(2);
-        const currencySign = data.Items[0].draws.currency;
+        const currencySign = data.currency || 'Euro';
 
         const priceString = `${currencySign}${price}`;
         this.setState({

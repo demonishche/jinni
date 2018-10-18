@@ -21,7 +21,7 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
 
     const currHelpLottoData = helpLottoData[lottoSelector];
     const currPickerLottoData = pickerLottoData[lottoSelector];
-    console.log(lottoSelector)
+
     return (
         <section className="help">
             <div className="cont-zone">
