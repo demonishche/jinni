@@ -15,6 +15,8 @@ class DynamicHeader extends Component {
       lottoData: allLottoData[this.props.lotto]
   };
 
+  prevAngle = 0;
+
   constructJackpot = jackpot => {
       let jackpotReversed = reverseString(jackpot);
       
@@ -52,12 +54,19 @@ class DynamicHeader extends Component {
     const { data } = this.props;
       const delta = 90 / data.gamesTypesCount;
       let result = [];
-      if (count > 5)
-        count = 5;
+    
+      if (this.prevAngle === 0) {
+        this.prevAngle = 270 + delta/0.9*(0 - Math.floor(data.gamesTypesCount/2));
+      } else {
+          this.prevAngle = this.prevAngle + delta/3;
+      }
       for (let i = 0; i < count; i++) {
+        this.prevAngle = this.prevAngle + 2;
+
         result.push(
             <div key={i} className="ticket-item">
-                <img style={{transform: `rotate(${270 + delta/1.2*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: (data.gamesTypesCount < 6 ? 80 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                {/* <img style={{transform: `rotate(${270 + delta/1.2*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: (data.gamesTypesCount < 6 ? 80 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" /> */}
+                {<img style={{transform: `rotate(${this.prevAngle}deg)`, left: (data.gamesTypesCount < 6 ? 80 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />}
             </div>
         )
       }

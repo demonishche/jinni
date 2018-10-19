@@ -79,12 +79,9 @@ class App extends Component {
 
     getScratchcardsInfo() {
         let fetchData = {};
-        let incentiveID = getParamFromURL("incentiveId");
+        let incentiveID = this.state.urlData.incentiveID;
         let incentiveCode = getParamFromURL("incentiveCode");
         const offer = getParamFromURL("offer");
-
-        if (!incentiveID)
-            location.href = location.origin;
 
         if (!incentiveCode && !offer) {
             location.href = location.origin;
@@ -99,6 +96,7 @@ class App extends Component {
             .get(link + incentiveID)
             .then(response => {
                 fetchData = response.data;
+                console.log(fetchData);
                 if (!!fetchData.ErrorID)
                     location.href = location.origin;
                     
@@ -165,7 +163,7 @@ class App extends Component {
     };
 
     setUrlData = async () => {
-        const bTag = getParamFromCookieOrUrl("btag"),
+        let bTag = getParamFromCookieOrUrl("btag"),
             campaign = getParamFromCookieOrUrl("campaign"),
             couponCode = getParamFromCookieOrUrl("couponCode"),
             referral = getParamFromCookieOrUrl("referral"),
@@ -178,7 +176,14 @@ class App extends Component {
             affiliateId = bTag.length > 0 ? bTag.substring(0, bTag.indexOf("_")) : "",
             incentiveCode = getParamFromURL("incentiveCode") || lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_incentiveCode`] ||
             "free_ticket_em",
-            packageId = getParamFromURL("packageId") || lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_packageId`] || "255";
+            packageId = getParamFromURL("packageId") || lottoParamsData[lotteryOrientation.toLowerCase()][`${offer}_packageId`] || "255",
+            incentiveID = getParamFromURL("incentiveId");
+
+        if (!!incentiveID) {
+            lotteryOrientation = this.stratchcardsName;
+        } else {
+            location.href = location.origin;
+        }
 
         if (offer.indexOf("freeticket") === -1 && offer.indexOf("for") === -1)
             location.href = location.origin;
@@ -199,7 +204,8 @@ class App extends Component {
             incentiveCode,
             packageId,
             redirectUrl,
-            referral: referral.length > 0 ? referral : window.location.href
+            referral: referral.length > 0 ? referral : window.location.href,
+            incentiveID: incentiveID
         };
 
         const newUrlData = Object.assign({}, this.state.urlData, urlData);
