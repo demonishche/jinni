@@ -134,6 +134,8 @@ class App extends Component {
                         }
                 })
 
+                console.log('LotteryName: ' + lottoData.LotteryName);
+
                 this.setState({
                     lottoData
                 });
@@ -204,6 +206,8 @@ class App extends Component {
             referral: referral.length > 0 ? referral : window.location.href,
             incentiveID: incentiveID
         };
+
+        console.log('LotteryOrientation: ' + lotteryOrientation);
 
         const newUrlData = Object.assign({}, this.state.urlData, urlData);
 
