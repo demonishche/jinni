@@ -97,8 +97,18 @@ class App extends Component {
             .then(response => {
                 fetchData = response.data;
                 console.log(fetchData);
-                if (!!fetchData.ErrorID)
-                    location.href = location.origin;
+                if (!!fetchData.ErrorID) {
+                    // location.href = location.origin;
+                    let lottoData = {
+                        jsonFormatError: true
+                    };
+
+                    this.setState({
+                        lottoData
+                    });
+
+                    return;
+                }
                     
                 this.stratchcardsName = 'scratchcards';
 
@@ -137,8 +147,6 @@ class App extends Component {
                             entries: item.NumberOfEntries
                         }
                 })
-
-                console.log('LotteryName: ' + lottoData.LotteryName);
 
                 this.setState({
                     lottoData
@@ -210,8 +218,6 @@ class App extends Component {
             referral: referral.length > 0 ? referral : window.location.href,
             incentiveID: incentiveID
         };
-
-        console.log('LotteryOrientation: ' + lotteryOrientation);
 
         const newUrlData = Object.assign({}, this.state.urlData, urlData);
 

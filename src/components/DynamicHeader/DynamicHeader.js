@@ -78,7 +78,7 @@ class DynamicHeader extends Component {
 	  const {ticketsData} = this.props.pickerStore;
       const lottoData = this.state.lottoData;
       const jackpotDisplay = jackpot ? this.constructJackpot(jackpot) : undefined;
-        console.log(data);
+
       return (
         <div className='container__header'>
             {lotto.toLowerCase() !== "scratchcards" ? (<div className={`headerWrapper`}>
