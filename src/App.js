@@ -181,10 +181,7 @@ class App extends Component {
 
         if (!!incentiveID) {
             lotteryOrientation = this.stratchcardsName;
-        } else {
-            location.href = location.origin;
         }
-
         if (offer.indexOf("freeticket") === -1 && offer.indexOf("for") === -1)
             location.href = location.origin;
         
