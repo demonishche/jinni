@@ -16,7 +16,8 @@
     "scratchcardsSubtitle": "Ready. Steady. Scratch!",
     "scratchcardsOldPrice": "was",
     "scratchcardsNowOnly": "now only",
-    "scratchcardsPlayNow": "PLAY NOW"
+    "scratchcardsPlayNow": "PLAY NOW",
+    "wrongJsonFormat": "Sorry, we can't find any game by the id"
   },
   "headerMobileText": {
     "freeticketTitle": "Play the next draw for <span>FREE</span>",
@@ -29,7 +30,8 @@
     "scratchcardsPlayNow": "PLAY NOW",
     "million": "million",
     "notfreeTitle": "Get <span>{{numberOfTickets}}</span> lines for the price of <span>{{numberOfNotFree}}</span> !",
-    "freeLabel": "FREE"
+    "freeLabel": "FREE",
+    "wrongJsonFormat": "Sorry, we can't find any game by the id"
   },
   "helpSectionText": {
     "title": "How to play {{lotteryName}}",

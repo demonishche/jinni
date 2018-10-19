@@ -121,12 +121,16 @@ class App extends Component {
                     Discount: fetchData.Discount,
                     gamesCount: 0,
                     gamesTypesCount: 0,
+                    jsonFormatError: false
                 }
 
                 lottoData['games'] = fetchData.Items.map(item => {
                     lottoData.gamesCount += parseInt(item.NumberOfEntries);
                     lottoData.gamesTypesCount++;
-
+                        if (!item.Game) {
+                            lottoData.jsonFormatError = true;
+                            return {};
+                        }
                         return {
                             id: item.ItemID,
                             name: item.Game.GameID,

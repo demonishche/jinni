@@ -16,7 +16,8 @@
     "scratchcardsSubtitle": "Auf die Plätze, Fertig, los rubbeln!",
     "scratchcardsOldPrice": "war ",
     "scratchcardsNowOnly": "nur jetzt",
-    "scratchcardsPlayNow": "JETZT SPIELEN"
+    "scratchcardsPlayNow": "JETZT SPIELEN",
+    "wrongJsonFormat": "Sorry, we can't find any game by the id"
   },
   "headerMobileText": {
     "freeticketTitle": "Nimm an der nächsten Ziehung <span>GRATIS</span> teil",
@@ -29,7 +30,8 @@
     "scratchcardsSubtitle": "Auf die Plätze, Fertig, los rubbeln!",
     "scratchcardsOldPrice": "war ",
     "scratchcardsNowOnly": "nur jetzt",
-    "scratchcardsPlayNow": "JETZT SPIELEN"
+    "scratchcardsPlayNow": "JETZT SPIELEN",
+    "wrongJsonFormat": "Sorry, we can't find any game by the id"
   },
   "helpSectionText": {
     "title": "Wie {{lotteryName}} funktioniert",

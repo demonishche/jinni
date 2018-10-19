@@ -176,7 +176,7 @@ class DynamicMobileHeader extends Component {
                 </header>
             </div>) : (
                 <div className={`headerWrapper`}>
-                <header className="header-scratch" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
+                 {!data.jsonFormatError ? (<header className="header-scratch" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
                     <div className="header-scratch-wrapper">
                         <div className="logo-scratch">
                             <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
@@ -216,7 +216,19 @@ class DynamicMobileHeader extends Component {
                              )
                         })}
                     </div>) : ''}
-                </header>
+                </header>) : (
+                    <header className="header-scratch jsonformatError__header" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
+                        <div className="header-scratch-wrapper">
+                            <div className="logo-scratch">
+                                <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
+                            </div>
+                            <div className="scrath-text">
+                                <h2 className='jsonFormatError jsonFormatError--mobile'>{t("wrongJsonFormat")}</h2>
+                            </div>
+                        </div>
+                    </header>
+                    )
+                 }
             </div>
             )}
         </div>

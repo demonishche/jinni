@@ -78,7 +78,7 @@ class DynamicHeader extends Component {
 	  const {ticketsData} = this.props.pickerStore;
       const lottoData = this.state.lottoData;
       const jackpotDisplay = jackpot ? this.constructJackpot(jackpot) : undefined;
-
+        console.log(data);
       return (
         <div className='container__header'>
             {lotto.toLowerCase() !== "scratchcards" ? (<div className={`headerWrapper`}>
@@ -107,7 +107,7 @@ class DynamicHeader extends Component {
                 </header>
             </div>) : (
             <div className={`headerWrapper`}>
-                <header className="header-scratch" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
+               {!data.jsonFormatError ? ( <header className="header-scratch" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
                     <div className="header-scratch-wrapper">
                         <div className="logo-scratch">
                             <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
@@ -147,7 +147,19 @@ class DynamicHeader extends Component {
                              )
                         })}
                     </div>) : ''}
-                </header>
+                </header>) : (
+                    <header className="header-scratch jsonformatError__header" style={{ backgroundImage: `url(./assets/Header/bg/scratch.png)` }}>
+                        <div className="header-scratch-wrapper">
+                            <div className="logo-scratch">
+                                <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
+                            </div>
+                            <div className="scrath-text">
+                                <h2 className='jsonFormatError'>{t("wrongJsonFormat")}</h2>
+                            </div>
+                        </div>
+                    </header>
+                    )
+                }
             </div>)}
         </div>
       );
