@@ -38,6 +38,7 @@
   "helpSectionText": {
     "title": "Wie {{lotteryName}} funktioniert",
     "firstStepTitle": "WÄHLE DEINE GLÜCKSZAHLEN",
+    "firstStepScratchTitle": "Auswählen",
     "firstStepText": {
       "firstStepScratchTitle": "Auswählen",
       "megamillions": "Wähle {{numbersAmount}} Zahlen von 1-{{maxNumber}} <br class='hide-big' />+ {{bonusAmount}} {{bonusName}} von 1-{{maxBonus}}. <br class='hide-big' />Oder erhalte eine zufällige Auswahl, wenn Du auf <br class='hide-big' /> “Quicktipp” klickst",
@@ -241,7 +242,7 @@
   "factSectionText": {
     "title": "Wusstest Du das schon?",
     "facts": {
-      "megamillions": ["Der größte MegaMillions Jackpot lag bei lebensverändernden $656 Millionen!"],
+      "megamillions": ["Der größte MegaMillions Jackpot lag bei lebensverändernden $1.39 Milliarden!"],
       "euromillions": ["Im Jahr 2014 hat Castelo Branco den maximalen EuroMillions Jackpot von € 190 Millionen gewonnen.."],
       "eurojackpot": [
         "Der EuroJackpot hat 12 Gewinnklassen und Spieler gewinnen im Vergleich zu EuroMillions doppelt so oft."
