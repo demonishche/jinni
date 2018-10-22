@@ -119,14 +119,14 @@ class DynamicHeader extends Component {
                             <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
                         </div>
                         <div className="scrath-text">
-                            <p>{t("jinnisScratchcards")}</p>
+                            <p data-text={t("jinnisScratchcards")}>{t("jinnisScratchcards")}</p>
                         </div>
                         <div className="title-scratch">
-                            <p>{data.gamesCount} {t("scratchcardsGamesCount")} €{data.PackagePrice}</p>
+                            <p data-text={data.gamesCount + ' ' + t("scratchcardsGamesCount") + ' ' + `€` + data.PackagePrice}>{data.gamesCount} {t("scratchcardsGamesCount")} €{data.PackagePrice}</p>
                         </div>
                         <div className="under-title-text">
-                            <p dangerouslySetInnerHTML={{__html:t("scratchcardsTitle", {data: data})}}></p>
-                            <p>{t("scratchcardsSubtitle")}</p>
+                            <p data-text={t("scratchcardsTitle", {data: data})} dangerouslySetInnerHTML={{__html:t("scratchcardsTitle", {data: data})}}></p>
+                            <p data-text={t("scratchcardsSubtitle")}>{t("scratchcardsSubtitle")}</p>
                         </div>
                         <div className="scratch-price">
                             <span className="old-preice">
@@ -135,7 +135,7 @@ class DynamicHeader extends Component {
                             </span>
                             <span className="curent-price">
                                 <p className="text">{t("scratchcardsNowOnly")} </p>
-                                <p className="price">€{data.PackagePrice}</p>
+                                <p  data-text={`€` + data.PackagePrice} className="price">€{data.PackagePrice}</p>
                             </span>
                         </div>
                         <div className="scratch-button">
@@ -174,7 +174,7 @@ class DynamicHeader extends Component {
                                 <img src="./assets/Header/logo/scratchcards.svg" alt="logo" />
                             </div>
                             <div className="scrath-text">
-                                <h2 className='jsonFormatError'>{t("wrongJsonFormat")}</h2>
+                                <h2 data-text={t("wrongJsonFormat")} className='jsonFormatError'>{t("wrongJsonFormat")}</h2>
                             </div>
                         </div>
                     </header>
