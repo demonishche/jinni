@@ -114,7 +114,7 @@ class DynamicMobileHeader extends Component {
     const { data } = this.props;
       const delta = 90 / data.gamesTypesCount;
       let result = [];
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < 3; i++) {
         result.push(
             <div key={i} className="ticket-item">
                 <img style={{transform: `rotate(${270 + delta*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: /*(delta < 30 ? 30 : delta)**/itemIndex + '%', bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
