@@ -473,6 +473,9 @@ margin: 0 auto;
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  .ticket {
+    left: 80%;
+  }
   .title-scratch p {
     font-size: 24px;
     margin: 10px 0 10px 0;
@@ -531,6 +534,9 @@ margin: 0 auto;
   // }
 
 }
+
+
+
 @media (max-width: 450px){
   //.title-scratch p {
   //  font-size: 30px;
@@ -542,13 +548,23 @@ margin: 0 auto;
   .scratch-tickets {
     display: block;
     margin: 0 auto;
+    top: 40%;
     //width: 320px;
   }
 
   .ticket {
     transform: scale(0.6);
     left: 45%;
-    top: 225px;
+    top: 20%;
+    position: relative;
+  }
+
+}
+
+@media (max-width: 414px) {
+  .scratch-tickets {
+    display: block;
+    margin: 0 auto;
   }
 
 }
@@ -557,13 +573,18 @@ margin: 0 auto;
   .scratch-tickets {
     position: relative;
     left: -5%;
+    top: 35%;
   }
 }
+
+
+
 
 @media (max-width: 376px){
   .scratch-tickets {
     position: relative;
     left: -10%;
+    top: 40%;
   }
 }
 @media (max-width: 361px){
