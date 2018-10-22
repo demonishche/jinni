@@ -37,6 +37,7 @@
   },
   "helpSectionText": {
     "title": "How to play {{lotteryName}}",
+    "scratchTitle": "How to play Scratchcards",
     "firstStepTitle": "Pick your lucky numbers",
     "firstStepScratchTitle": "Choose",
     "firstStepText": {

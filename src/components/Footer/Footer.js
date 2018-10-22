@@ -53,7 +53,7 @@ const Footer = ({offer, t, i18n, lotto}) => {
             </section>
             <section className="footer_copyright">
                 <div className="cont-zone">
-                    <a className="footer_terms-link" href={`https://jinnilotto.com/${linkLang}/${termsPages[offer]}`} target="_blank"><h6>{t("title")}</h6></a>
+                    <a className="footer_terms-link" href={`https://jinnilotto.com/terms-conditions`} target="_blank"><h6>{t("title")}</h6></a>
                     <div dangerouslySetInnerHTML={{__html:t("textHtml", {returnObjects: true}).join("")}}></div>
                 </div>
             </section>

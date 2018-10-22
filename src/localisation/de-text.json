@@ -37,6 +37,7 @@
   },
   "helpSectionText": {
     "title": "Wie {{lotteryName}} funktioniert",
+    "scratchTitle": "Wie Rubbellose funktioniert",
     "firstStepTitle": "WÄHLE DEINE GLÜCKSZAHLEN",
     "firstStepScratchTitle": "Auswählen",
     "firstStepText": {
