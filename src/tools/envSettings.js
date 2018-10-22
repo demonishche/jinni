@@ -1,4 +1,6 @@
 const liveHost = "lp.jinnilotto.com";
+const stageHost = "stage";
+const localhost = "localhost";
 
 const liveApi = "api.jinnilotto.com";
 const stageApi = "stage-api.jinnilotto.com";
@@ -22,5 +24,5 @@ const stageSettings = {
     lottoParamsData: stageLottoParamsData
 }
 
-module.exports = window.location.hostname.includes(liveHost) ? liveSettings : stageSettings;
+module.exports = (window.location.hostname.includes(stageHost) || window.location.hostname.includes(localhost)) ? stageSettings : liveSettings;
 // module.exports = liveSettings;
