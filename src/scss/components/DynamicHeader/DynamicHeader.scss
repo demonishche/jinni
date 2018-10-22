@@ -371,6 +371,15 @@ display: block;
 margin: 30px auto;
 text-decoration: none;
 padding:13px 0 13px 0;
+position: relative;
+}
+
+.btnAnimation {
+  width: 252px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .scratch-tickets {

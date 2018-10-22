@@ -202,7 +202,21 @@ class DynamicMobileHeader extends Component {
                             </span>
                         </div>
                         <div className="scratch-button">
-                            <a href={this.generateLink()}>{t("scratchcardsPlayNow")}</a>
+                            <a href={this.generateLink()}>
+                            <svg className='btnAnimation' version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 40" xmlSpace="preserve">
+                                <defs>
+                                    <polygon id="polyclip" points="-42.167,40 -230,40 -190,0 -2.167,0"/>
+                                </defs>
+                                <clipPath id="clipper">
+                                    <use xlinkHref="#polyclip"  style={{overflow:'visible'}}/>
+                                </clipPath>
+                                <g style={{opacity:0.2, 'clip-path':'url(#clipper)'}}>
+                                    <path style={{fill:'#FFFFFF'}} d="M200,20c0,11.046-8.954,20-20,20H20C8.954,40,0,31.046,0,20l0,0C0,8.954,8.954,0,20,0h160C191.046,0,200,8.954,200,20L200,20z"/>
+                                </g>
+                                <animateTransform xlinkHref="#polyclip" attributeName="transform" type="translate" from="-1000 0" to="2500 0" begin="0s" dur="3s" repeatCount="indefinite" />
+                            </svg>
+                            {t("scratchcardsPlayNow")}
+                            </a>
                         </div>
                     </div>
                     {!!data.games ? (<div className="scratch-tickets">
