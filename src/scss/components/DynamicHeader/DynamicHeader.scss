@@ -450,6 +450,35 @@ margin: 0 auto;
 }
 
 @media (max-width: 767px){
+  .logo-scratch {
+    width: 106px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .title-scratch p {
+    font-size: 24px;
+    margin: 10px 0 10px 0;
+  }
+  .scrath-text p {
+    line-height: unset;
+  }
+  .under-title-text p {
+    padding-bottom: 0;
+  }
+
+  .scratch-price .text {
+    font-size: 12px;
+  }
+
+  .curent-price .price {
+    font-size: 21px;
+  }
+  .old-preice .price {
+    font-size: 21px;
+  }
+
   .title-scratch p {
     font-size: 30px;
   }
@@ -487,12 +516,12 @@ margin: 0 auto;
 
 }
 @media (max-width: 450px){
-  .title-scratch p {
-    font-size: 30px;
-  }
-  .under-title-text p {
-    font-size: 16px;
-  }
+  //.title-scratch p {
+  //  font-size: 30px;
+  //}
+  //.under-title-text p {
+  //  font-size: 16px;
+  //}
 
   .scratch-tickets {
     display: block;
@@ -503,6 +532,7 @@ margin: 0 auto;
   .ticket {
     transform: scale(0.6);
     left: 45%;
+    top: 225px;
   }
 
 }
