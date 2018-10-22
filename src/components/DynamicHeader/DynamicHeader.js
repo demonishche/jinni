@@ -71,7 +71,7 @@ class DynamicHeader extends Component {
 
         result.push(
             <div key={i} className="ticket-item">
-                <img style={{transform: `rotate(${270 + delta/1.2*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: (data.gamesTypesCount < 6 ? 80 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
+                <img style={{transform: `rotate(${270 + delta/1.2*(itemIndex - Math.floor(data.gamesTypesCount/2))+ i*2}deg)`, left: (data.gamesTypesCount < 6 ? 80 : delta)*itemIndex, bottom: -60 - itemIndex*35}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />
                 {/* {<img style={{transform: `rotate(${this.prevAngle}deg)`, left: (data.gamesTypesCount < 6 ? 80 : delta)*itemIndex, bottom: -60 - itemIndex*30}} src={`http://images.jinnilotto.com/lp/scratchcards/${item.name}.png`} alt="pick" />} */}
             </div>
         )

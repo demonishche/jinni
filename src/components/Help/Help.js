@@ -25,7 +25,12 @@ const Help = ({ drawDate, lotto, lottoOriginal, offer, pickerStore, numberOfNotF
     return (
         <section className="help">
             <div className="cont-zone">
+                {lotto !== 'scratchcards' ? (
                 <h2 className="help_title">{t("title", {lotteryName: lottoOriginal})}</h2>
+                ) : (
+                    <h2 className="help_title">{t("scratchTitle")}</h2>
+                )
+                }
                 <div className="help_subwrap">
                     <div className="help_step">
                         <img src={iconPick} alt="" className="help_step_icon" />
