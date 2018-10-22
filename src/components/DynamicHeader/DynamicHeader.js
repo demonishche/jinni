@@ -147,7 +147,7 @@ class DynamicHeader extends Component {
                                 <clipPath id="clipper">
                                     <use xlinkHref="#polyclip"  style={{overflow:'visible'}}/>
                                 </clipPath>
-                                <g style={{opacity:0.2, 'clip-path':'url(#clipper)'}}>
+                                <g style={{opacity:0.2, clipPath:'url(#clipper)'}}>
                                     <path style={{fill:'#FFFFFF'}} d="M200,20c0,11.046-8.954,20-20,20H20C8.954,40,0,31.046,0,20l0,0C0,8.954,8.954,0,20,0h160C191.046,0,200,8.954,200,20L200,20z"/>
                                 </g>
                                 <animateTransform xlinkHref="#polyclip" attributeName="transform" type="translate" from="-1000 0" to="2500 0" begin="0s" dur="3s" repeatCount="indefinite" />
