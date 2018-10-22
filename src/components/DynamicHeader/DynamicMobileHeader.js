@@ -7,7 +7,7 @@ import {
 
 import headerLottoData from "./headerLottoData";
 import pickerLottoData from "../NumberPicker/pickerLottoData";
-import {roundDecimal, roundMillions, reverseString} from "./jackpotTools";
+import {roundDecimal, roundMillions, reverseString, roundBillions} from "./jackpotTools";
 import {mobXConnect} from "../../tools/toolFunctions";
 
 const liveHost = "lp.jinnilotto.com";
@@ -27,6 +27,11 @@ class DynamicMobileHeader extends Component {
       const decimalString = jackpotReversed.slice(4, 6);
       const roundedDecimalString = roundDecimal(decimalString);
 
+      if (jackpotReversed.length > 9) {
+        const billionsString = jackpotReversed.slice(6);
+        const roundedBillionString = roundBillions(billionsString);
+        return `${lottoData.currency} ${reverseString(roundedBillionString)} ${t("billion")}`;
+      }
       if (jackpotReversed.length > 6) {
           const millionsString = jackpotReversed.slice(6);
 
