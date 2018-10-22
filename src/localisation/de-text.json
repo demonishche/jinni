@@ -9,6 +9,7 @@
   "headerDesktopText": {
     "freeticketTitle": "Nimm <span>GRATIS</span> an der nächsten <img src='{{lotteryLogo}}' alt='{{lotteryName}}' />Ziehung teil.",
     "million": "millionen",
+    "billion": "milliarden",
     "notfreeTitle": "Erhalte {{numberOfTickets}} <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> Tippfelder zum Preis von {{numberOfNotFree}}",
     "jinnisScratchcards": "JINNI’S Rubbellose",
     "scratchcardsGamesCount": "SPIELE UM",
@@ -22,6 +23,7 @@
   "headerMobileText": {
     "freeticketTitle": "Nimm an der nächsten Ziehung <span>GRATIS</span> teil",
     "million": "Millionen",
+    "billion": "milliarden",
     "notfreeTitle": "Erhalte <span>{{numberOfTickets}}</span> Tippfelder zum Preis von <span>{{numberOfNotFree}}</span> !",
     "freeLabel": "GRATIS",
     "jinnisScratchcards": "JINNI’S Rubbellose",

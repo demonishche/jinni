@@ -15,6 +15,10 @@ import symbolO from "../../assets/Header/jackpot-font/O.png";
 import symbolN from "../../assets/Header/jackpot-font/N.png";
 import symbolS from "../../assets/Header/jackpot-font/S.png";
 import symbolE from "../../assets/Header/jackpot-font/E.png";
+import symbolB from "../../assets/Header/jackpot-font/B - Lights On.png";
+import symbolA from "../../assets/Header/jackpot-font/A - Lights On.png";
+import symbolR from "../../assets/Header/jackpot-font/R.png";
+import symbolD from "../../assets/Header/jackpot-font/D.png";
 import symbolDot from "../../assets/Header/jackpot-font/Dot.png";
 import symbolEuro from "../../assets/Header/jackpot-font/Euro.png";
 import i18n from "../../tools/i18nextSetup";
@@ -37,6 +41,7 @@ const symbols = {
     n: symbolN,
     s: symbolS,
     e: symbolE,
+    b: symbolB,
     dot: symbolDot,
     euro: symbolEuro
 }
@@ -64,7 +69,15 @@ const roundMillions = (millions, decimal) => {
     }
 }
 
+// const roundBillions = (billions, decimal) => {
+//     let billionsNumber = Number(reverseString(millions));  
+
+//     billionsNumber = billionsNumber / 1000;
+
+// }
+
 const mapStringToImages = string => {
+    console.log(string)
     const stringSymbols = string.split("");
 
     const mappedSymbols = stringSymbols.map((symbol) => {

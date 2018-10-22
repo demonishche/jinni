@@ -9,6 +9,7 @@
   "headerDesktopText": {
     "freeticketTitle": "Play the next <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> draw for <span>FREE</span>",
     "million": "million",
+    "billion": "billion",
     "notfreeTitle": "Get {{numberOfTickets}} <img src='{{lotteryLogo}}' alt='{{lotteryName}}' /> lines for the price of {{numberOfNotFree}}",
     "jinnisScratchcards": "JINNI’S SCRATCHCARDS",
     "scratchcardsGamesCount": "GAMES AT",
@@ -29,6 +30,7 @@
     "scratchcardsNowOnly": "now only",
     "scratchcardsPlayNow": "PLAY NOW",
     "million": "million",
+    "billion": "billion",
     "notfreeTitle": "Get <span>{{numberOfTickets}}</span> lines for the price of <span>{{numberOfNotFree}}</span> !",
     "freeLabel": "FREE",
     "wrongJsonFormat": "Sorry, we can't find any game by the id"

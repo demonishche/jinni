@@ -18,16 +18,20 @@ class DynamicHeader extends Component {
   prevAngle = 0;
 
   constructJackpot = jackpot => {
+      console.log(jackpot)
       let jackpotReversed = reverseString(jackpot);
       
       const decimalString = jackpotReversed.slice(4,6);
       const roundedDecimalString = roundDecimal(decimalString);
+        console.log(roundedDecimalString)
+
 
       if (jackpotReversed.length > 6) {
           const millionsString = jackpotReversed.slice(6);
 
           if (millionsString.length >= 3 || Number(roundedDecimalString) >= 10 || Number(roundedDecimalString) === 0) {
               const roundedMillionsString = roundMillions(millionsString, roundedDecimalString);
+              
               return mapStringToImages(roundedMillionsString);  
           }
 
