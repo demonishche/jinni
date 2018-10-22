@@ -8,7 +8,7 @@ import {
 
 import allLottoData from "./headerLottoData";
 
-import {roundDecimal, roundMillions, reverseString, mapStringToImages} from "./jackpotTools";
+import {roundDecimal, roundMillions, reverseString, mapStringToImages, roundBillions} from "./jackpotTools";
 
 class DynamicHeader extends Component {
   state = {
@@ -18,15 +18,17 @@ class DynamicHeader extends Component {
   prevAngle = 0;
 
   constructJackpot = jackpot => {
-      console.log(jackpot)
       let jackpotReversed = reverseString(jackpot);
       
       const decimalString = jackpotReversed.slice(4,6);
       const roundedDecimalString = roundDecimal(decimalString);
-        console.log(roundedDecimalString)
 
-
-      if (jackpotReversed.length > 6) {
+      if (jackpotReversed.length > 9) {
+        const billionsString = jackpotReversed.slice(6);
+        const roundedBillionString = roundBillions(billionsString);
+        return mapStringToImages(roundedBillionString, 'billion');  
+      }
+      else if (jackpotReversed.length > 6) {
           const millionsString = jackpotReversed.slice(6);
 
           if (millionsString.length >= 3 || Number(roundedDecimalString) >= 10 || Number(roundedDecimalString) === 0) {

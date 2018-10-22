@@ -42,6 +42,9 @@ const symbols = {
     s: symbolS,
     e: symbolE,
     b: symbolB,
+    a: symbolA,
+    r: symbolR,
+    d: symbolD,
     dot: symbolDot,
     euro: symbolEuro
 }
@@ -69,15 +72,16 @@ const roundMillions = (millions, decimal) => {
     }
 }
 
-// const roundBillions = (billions, decimal) => {
-//     let billionsNumber = Number(reverseString(millions));  
+const roundBillions = (billions) => {
+    let billionsNumber = Number(reverseString(billions));  
 
-//     billionsNumber = billionsNumber / 1000;
+    billionsNumber = billionsNumber / 1000;
+    billionsNumber = Math.round(billionsNumber * 100) / 100;
 
-// }
+    return reverseString((billionsNumber).toString());
+}
 
-const mapStringToImages = string => {
-    console.log(string)
+const mapStringToImages = (string, count = 'million') => {
     const stringSymbols = string.split("");
 
     const mappedSymbols = stringSymbols.map((symbol) => {
@@ -96,7 +100,7 @@ const mapStringToImages = string => {
         `<img class="header_jackpot_symbol -currency" src="${symbols["euro"]}" alt="euro"/>`
     );
 	
-    const millionString = i18n.t("headerDesktopText:million");
+    const millionString = i18n.t(`headerDesktopText:${count}`);
 
     for (let x = 0; x < millionString.length; x++) {
         const letter = millionString.charAt(x);
@@ -113,5 +117,6 @@ module.exports = {
     reverseString,
     roundDecimal,
     roundMillions,
-    mapStringToImages
+    mapStringToImages,
+    roundBillions
 }
